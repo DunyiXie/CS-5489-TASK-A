@@ -1,0 +1,4 @@
+metric,measured,paper_reference,difference_percentage_points,source,interpretation
+precision,0.7209937209937209,0.7191,0.1893720993720982,"https://aclanthology.org/W03-0419.pdf (section 3.4, Table 5)",Historical context only; not a tuning target or exact-reproduction claim.
+recall,0.46759915014164305,0.509,-4.140084985835696,"https://aclanthology.org/W03-0419.pdf (section 3.4, Table 5)",Historical context only; not a tuning target or exact-reproduction claim.
+f1,0.5672860057995919,0.5961,-2.881399420040809,"https://aclanthology.org/W03-0419.pdf (section 3.4, Table 5)",Historical context only; not a tuning target or exact-reproduction claim.

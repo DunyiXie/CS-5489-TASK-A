@@ -1,0 +1,104 @@
+{
+  "bert_base_cased": {
+    "synthetic_only": true,
+    "forced_max_length": 64,
+    "sentences": [
+      {
+        "sentence_index": 0,
+        "sentence_id": "synthetic-short",
+        "words": 6,
+        "full_length": 10,
+        "chunks": 1,
+        "multi_piece_words": 1,
+        "unknown_pieces": 0
+      },
+      {
+        "sentence_index": 1,
+        "sentence_id": "synthetic-long",
+        "words": 182,
+        "full_length": 544,
+        "chunks": 9,
+        "multi_piece_words": 180,
+        "unknown_pieces": 0
+      },
+      {
+        "sentence_index": 2,
+        "sentence_id": "synthetic-symbols",
+        "words": 6,
+        "full_length": 20,
+        "chunks": 1,
+        "multi_piece_words": 5,
+        "unknown_pieces": 0
+      }
+    ],
+    "audit": {
+      "original_words": 194,
+      "supervised_words": 194,
+      "dropped_words": 0,
+      "duplicated_words": 0,
+      "masked_special_tokens": 22,
+      "masked_continuation_tokens": 374,
+      "max_chunk_length": 63,
+      "gold_roundtrip_passed": true
+    },
+    "padding": {
+      "batch_shape": [
+        2,
+        63
+      ],
+      "padding_positions": 53,
+      "padding_labels_verified": true
+    }
+  },
+  "roberta_base": {
+    "synthetic_only": true,
+    "forced_max_length": 64,
+    "sentences": [
+      {
+        "sentence_index": 0,
+        "sentence_id": "synthetic-short",
+        "words": 6,
+        "full_length": 11,
+        "chunks": 1,
+        "multi_piece_words": 1,
+        "unknown_pieces": 0
+      },
+      {
+        "sentence_index": 1,
+        "sentence_id": "synthetic-long",
+        "words": 182,
+        "full_length": 724,
+        "chunks": 12,
+        "multi_piece_words": 180,
+        "unknown_pieces": 0
+      },
+      {
+        "sentence_index": 2,
+        "sentence_id": "synthetic-symbols",
+        "words": 6,
+        "full_length": 23,
+        "chunks": 1,
+        "multi_piece_words": 5,
+        "unknown_pieces": 0
+      }
+    ],
+    "audit": {
+      "original_words": 194,
+      "supervised_words": 194,
+      "dropped_words": 0,
+      "duplicated_words": 0,
+      "masked_special_tokens": 28,
+      "masked_continuation_tokens": 558,
+      "max_chunk_length": 63,
+      "gold_roundtrip_passed": true
+    },
+    "padding": {
+      "batch_shape": [
+        2,
+        63
+      ],
+      "padding_positions": 52,
+      "padding_labels_verified": true
+    }
+  }
+}

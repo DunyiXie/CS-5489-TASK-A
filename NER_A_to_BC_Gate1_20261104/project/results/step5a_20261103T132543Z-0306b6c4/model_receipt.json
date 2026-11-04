@@ -1,0 +1,7 @@
+{
+  "path": "/root/cs5489_ner_local/config/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+  "contract_sha256": "8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+  "model_sha256": "e928a4ba225849cf78babe2e6041c910dc8b69103f865ae36165a71810b9a41c",
+  "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+  "read_back_verified": true
+}

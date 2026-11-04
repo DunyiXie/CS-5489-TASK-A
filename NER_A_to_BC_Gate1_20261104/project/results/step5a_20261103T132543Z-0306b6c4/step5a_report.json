@@ -1,0 +1,1087 @@
+{
+  "run_id": "20261103T132543Z-0306b6c4",
+  "notebook_revision": "2026-11-03-memory-v1",
+  "accepted_reference": {
+    "date": "2026-11-02",
+    "evidence": "NER_step4_20261102T144254Z_65558b19.zip",
+    "archive_sha256": "2d4ea33ff624ef834b0a768aa59caf91c72e4d1b612284b9f1caad1aae832bc0"
+  },
+  "data_source": {
+    "requested_source": "eriktks/conll2003",
+    "actual_source": "tomaarsen/conll2003",
+    "revision": "3a0c0677d3177b6122fceed3239dda7a5de6a514",
+    "format": "parquet",
+    "source_url": "https://huggingface.co/datasets/tomaarsen/conll2003/tree/3a0c0677d3177b6122fceed3239dda7a5de6a514",
+    "reason": "Development document permits Parquet fallback; datasets 4.0 removes loading scripts.",
+    "license_as_stated_by_card": "other",
+    "source_files": [
+      {
+        "path": "data/train-00000-of-00001.parquet",
+        "size_bytes": 1241085,
+        "sha256": "28924b53e43ec4d741cbef16d8a6245a77f404a77f18d44e256f95fa29acb59b"
+      },
+      {
+        "path": "data/validation-00000-of-00001.parquet",
+        "size_bytes": 315597,
+        "sha256": "0aa0bd59cf9ac8f60252d8194a8a223b650daba50f8e5a79284abf85420bfe84"
+      },
+      {
+        "path": "data/test-00000-of-00001.parquet",
+        "size_bytes": 287552,
+        "sha256": "9242163e112f99b43c32b663c6d6f7d5df64de73e19e02fcac789935f72565b8"
+      },
+      {
+        "path": "README.md",
+        "size_bytes": 14967,
+        "sha256": "a6812e0cca383af9f4c316f8abe43169ddda7230c2686ba314629e59a41a66b9"
+      }
+    ],
+    "preprocessing": "None: no shuffle, split, filtering, label conversion or token normalization.",
+    "parity_scope": "Split sizes, metadata, all-row structure/IOB2 and ordered content hashes checked. Byte-for-byte equivalence to eriktks/conll2003 has not been established.",
+    "recorded_at_utc": "2026-11-03T13:25:47.243010+00:00"
+  },
+  "data_audit": {
+    "splits": {
+      "train": {
+        "rows": 14041,
+        "tokens": 203621,
+        "ordered_core_sha256": "aa1208d2f06bc11610d0d9527af175e282ca0f4092a06a5a9381240e1dfece6a",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 946
+      },
+      "validation": {
+        "rows": 3250,
+        "tokens": 51362,
+        "ordered_core_sha256": "91c3c12a9140e03ca679f24dc0437cdbae033babea946388677e46f9a52a78c2",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 216
+      },
+      "test": {
+        "rows": 3453,
+        "tokens": 46435,
+        "ordered_core_sha256": "bbdf60c2c1c3fbd1e7cb6a865d9d4dfd9df0110dff115de49f972175df7d3882",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 231
+      }
+    },
+    "label_names": {
+      "pos_tags": [
+        "\"",
+        "''",
+        "#",
+        "$",
+        "(",
+        ")",
+        ",",
+        ".",
+        ":",
+        "``",
+        "CC",
+        "CD",
+        "DT",
+        "EX",
+        "FW",
+        "IN",
+        "JJ",
+        "JJR",
+        "JJS",
+        "LS",
+        "MD",
+        "NN",
+        "NNP",
+        "NNPS",
+        "NNS",
+        "NN|SYM",
+        "PDT",
+        "POS",
+        "PRP",
+        "PRP$",
+        "RB",
+        "RBR",
+        "RBS",
+        "RP",
+        "SYM",
+        "TO",
+        "UH",
+        "VB",
+        "VBD",
+        "VBG",
+        "VBN",
+        "VBP",
+        "VBZ",
+        "WDT",
+        "WP",
+        "WP$",
+        "WRB"
+      ],
+      "chunk_tags": [
+        "O",
+        "B-ADJP",
+        "I-ADJP",
+        "B-ADVP",
+        "I-ADVP",
+        "B-CONJP",
+        "I-CONJP",
+        "B-INTJ",
+        "I-INTJ",
+        "B-LST",
+        "I-LST",
+        "B-NP",
+        "I-NP",
+        "B-PP",
+        "I-PP",
+        "B-PRT",
+        "I-PRT",
+        "B-SBAR",
+        "I-SBAR",
+        "B-UCP",
+        "I-UCP",
+        "B-VP",
+        "I-VP"
+      ],
+      "ner_tags": [
+        "O",
+        "B-PER",
+        "I-PER",
+        "B-ORG",
+        "I-ORG",
+        "B-LOC",
+        "I-LOC",
+        "B-MISC",
+        "I-MISC"
+      ]
+    },
+    "iob2_violations": 0,
+    "hash_format": "core-fields-decoded-tags-jsonl-utf8-v1"
+  },
+  "label_mapping": {
+    "label_names": [
+      "O",
+      "B-PER",
+      "I-PER",
+      "B-ORG",
+      "I-ORG",
+      "B-LOC",
+      "I-LOC",
+      "B-MISC",
+      "I-MISC"
+    ],
+    "label2id": {
+      "O": 0,
+      "B-PER": 1,
+      "I-PER": 2,
+      "B-ORG": 3,
+      "I-ORG": 4,
+      "B-LOC": 5,
+      "I-LOC": 6,
+      "B-MISC": 7,
+      "I-MISC": 8
+    },
+    "id2label": {
+      "0": "O",
+      "1": "B-PER",
+      "2": "I-PER",
+      "3": "B-ORG",
+      "4": "I-ORG",
+      "5": "B-LOC",
+      "6": "I-LOC",
+      "7": "B-MISC",
+      "8": "I-MISC"
+    },
+    "scheme": "IOB2"
+  },
+  "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+  "policy": {
+    "version": "ner-memory-baseline-v1",
+    "fit": "Official train only; memorize complete gold entity token tuples, never subphrases.",
+    "unique": "Keep a surface only when its complete training entities have exactly one NE type; discard all multi-type surfaces regardless of frequency. O is not an entity type.",
+    "matching": "Exact original tokens, case-sensitive; no normalization, substring matches or external gazetteers.",
+    "overlap": "Collect all sentence-local matches; accept by descending token length, then ascending start offset, skipping any occupied token. Finally sort by start.",
+    "tie_break": "Equal-length overlapping matches prefer the earlier start. A retained surface has only one type.",
+    "output": "IOB2: B at each accepted entity start, I inside, O elsewhere. Adjacent entities remain separate. Never cross sentence boundaries.",
+    "selection": "One preregistered configuration; no hyperparameters, CV, frequency cutoff or validation/test-based changes.",
+    "interpretation": "Implements the paper description. Case sensitivity and equal-length/crossing-overlap resolution are explicit project choices; exact identity to the historical executable is not established.",
+    "reference": "https://aclanthology.org/W03-0419.pdf (section 3.4, Table 5)"
+  },
+  "model_receipt": {
+    "path": "/root/cs5489_ner_local/config/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+    "contract_sha256": "8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+    "model_sha256": "e928a4ba225849cf78babe2e6041c910dc8b69103f865ae36165a71810b9a41c",
+    "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+    "read_back_verified": true
+  },
+  "dictionary_summary": {
+    "train_sentences": 14041,
+    "train_words": 203621,
+    "train_entity_mentions": 23499,
+    "distinct_entity_surfaces": 8082,
+    "retained_surfaces": 7950,
+    "ambiguous_surfaces": 132,
+    "retained_mentions": 21867,
+    "excluded_ambiguous_mentions": 1632,
+    "max_retained_length": 10
+  },
+  "dictionary_by_type": [
+    {
+      "type": "PER",
+      "retained_surfaces": 3595,
+      "retained_mentions": 6559,
+      "excluded_ambiguous_mentions": 41
+    },
+    {
+      "type": "ORG",
+      "retained_surfaces": 2282,
+      "retained_mentions": 5536,
+      "excluded_ambiguous_mentions": 785
+    },
+    {
+      "type": "LOC",
+      "retained_surfaces": 1214,
+      "retained_mentions": 6424,
+      "excluded_ambiguous_mentions": 716
+    },
+    {
+      "type": "MISC",
+      "retained_surfaces": 859,
+      "retained_mentions": 3348,
+      "excluded_ambiguous_mentions": 90
+    }
+  ],
+  "dictionary_lengths": [
+    {
+      "type": "LOC",
+      "token_length": 1,
+      "retained_surfaces": 929
+    },
+    {
+      "type": "LOC",
+      "token_length": 2,
+      "retained_surfaces": 231
+    },
+    {
+      "type": "LOC",
+      "token_length": 3,
+      "retained_surfaces": 40
+    },
+    {
+      "type": "LOC",
+      "token_length": 4,
+      "retained_surfaces": 4
+    },
+    {
+      "type": "LOC",
+      "token_length": 5,
+      "retained_surfaces": 7
+    },
+    {
+      "type": "LOC",
+      "token_length": 6,
+      "retained_surfaces": 1
+    },
+    {
+      "type": "LOC",
+      "token_length": 10,
+      "retained_surfaces": 2
+    },
+    {
+      "type": "MISC",
+      "token_length": 1,
+      "retained_surfaces": 503
+    },
+    {
+      "type": "MISC",
+      "token_length": 2,
+      "retained_surfaces": 223
+    },
+    {
+      "type": "MISC",
+      "token_length": 3,
+      "retained_surfaces": 87
+    },
+    {
+      "type": "MISC",
+      "token_length": 4,
+      "retained_surfaces": 32
+    },
+    {
+      "type": "MISC",
+      "token_length": 5,
+      "retained_surfaces": 11
+    },
+    {
+      "type": "MISC",
+      "token_length": 6,
+      "retained_surfaces": 2
+    },
+    {
+      "type": "MISC",
+      "token_length": 7,
+      "retained_surfaces": 1
+    },
+    {
+      "type": "ORG",
+      "token_length": 1,
+      "retained_surfaces": 996
+    },
+    {
+      "type": "ORG",
+      "token_length": 2,
+      "retained_surfaces": 704
+    },
+    {
+      "type": "ORG",
+      "token_length": 3,
+      "retained_surfaces": 351
+    },
+    {
+      "type": "ORG",
+      "token_length": 4,
+      "retained_surfaces": 142
+    },
+    {
+      "type": "ORG",
+      "token_length": 5,
+      "retained_surfaces": 54
+    },
+    {
+      "type": "ORG",
+      "token_length": 6,
+      "retained_surfaces": 20
+    },
+    {
+      "type": "ORG",
+      "token_length": 7,
+      "retained_surfaces": 12
+    },
+    {
+      "type": "ORG",
+      "token_length": 8,
+      "retained_surfaces": 2
+    },
+    {
+      "type": "ORG",
+      "token_length": 10,
+      "retained_surfaces": 1
+    },
+    {
+      "type": "PER",
+      "token_length": 1,
+      "retained_surfaces": 949
+    },
+    {
+      "type": "PER",
+      "token_length": 2,
+      "retained_surfaces": 2479
+    },
+    {
+      "type": "PER",
+      "token_length": 3,
+      "retained_surfaces": 142
+    },
+    {
+      "type": "PER",
+      "token_length": 4,
+      "retained_surfaces": 23
+    },
+    {
+      "type": "PER",
+      "token_length": 5,
+      "retained_surfaces": 1
+    },
+    {
+      "type": "PER",
+      "token_length": 6,
+      "retained_surfaces": 1
+    }
+  ],
+  "evaluations": {
+    "validation": {
+      "identity": {
+        "contract_sha256": "8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+        "model_sha256": "e928a4ba225849cf78babe2e6041c910dc8b69103f865ae36165a71810b9a41c",
+        "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+        "split": "validation",
+        "predictions_sha256": "e8fa2615acd81c1ad402c34754ede6040ca11a4cc45252ac76dc01cdbe9c3830",
+        "bootstrap": {
+          "n_resamples": 2000,
+          "confidence": 0.95,
+          "seed": 2026
+        }
+      },
+      "metrics": {
+        "contract": "ner-entity-metrics-v1",
+        "overall": {
+          "tp": 3609,
+          "fp": 939,
+          "fn": 2333,
+          "support": 5942,
+          "predicted": 4548,
+          "precision": 0.7935356200527705,
+          "recall": 0.6073712554695389,
+          "f1": 0.6880838894184939
+        },
+        "per_type": {
+          "PER": {
+            "tp": 771,
+            "fp": 180,
+            "fn": 1071,
+            "support": 1842,
+            "predicted": 951,
+            "precision": 0.8107255520504731,
+            "recall": 0.4185667752442997,
+            "f1": 0.5520945220193341
+          },
+          "ORG": {
+            "tp": 705,
+            "fp": 309,
+            "fn": 636,
+            "support": 1341,
+            "predicted": 1014,
+            "precision": 0.6952662721893491,
+            "recall": 0.5257270693512305,
+            "f1": 0.5987261146496815
+          },
+          "LOC": {
+            "tp": 1429,
+            "fp": 358,
+            "fn": 408,
+            "support": 1837,
+            "predicted": 1787,
+            "precision": 0.799664241745943,
+            "recall": 0.7778987479586282,
+            "f1": 0.7886313465783664
+          },
+          "MISC": {
+            "tp": 704,
+            "fp": 92,
+            "fn": 218,
+            "support": 922,
+            "predicted": 796,
+            "precision": 0.8844221105527639,
+            "recall": 0.7635574837310195,
+            "f1": 0.819557625145518
+          }
+        },
+        "sentences": 3250,
+        "words": 51362,
+        "prediction_iob2_repairs": 0,
+        "seqeval_crosscheck_passed": true
+      },
+      "bootstrap": {
+        "method": "sentence_percentile",
+        "seed": 2026,
+        "n_resamples": 2000,
+        "confidence": 0.95,
+        "unit": "original sentence",
+        "point": {
+          "contract": "ner-entity-metrics-v1",
+          "overall": {
+            "tp": 3609,
+            "fp": 939,
+            "fn": 2333,
+            "support": 5942,
+            "predicted": 4548,
+            "precision": 0.7935356200527705,
+            "recall": 0.6073712554695389,
+            "f1": 0.6880838894184939
+          },
+          "per_type": {
+            "PER": {
+              "tp": 771,
+              "fp": 180,
+              "fn": 1071,
+              "support": 1842,
+              "predicted": 951,
+              "precision": 0.8107255520504731,
+              "recall": 0.4185667752442997,
+              "f1": 0.5520945220193341
+            },
+            "ORG": {
+              "tp": 705,
+              "fp": 309,
+              "fn": 636,
+              "support": 1341,
+              "predicted": 1014,
+              "precision": 0.6952662721893491,
+              "recall": 0.5257270693512305,
+              "f1": 0.5987261146496815
+            },
+            "LOC": {
+              "tp": 1429,
+              "fp": 358,
+              "fn": 408,
+              "support": 1837,
+              "predicted": 1787,
+              "precision": 0.799664241745943,
+              "recall": 0.7778987479586282,
+              "f1": 0.7886313465783664
+            },
+            "MISC": {
+              "tp": 704,
+              "fp": 92,
+              "fn": 218,
+              "support": 922,
+              "predicted": 796,
+              "precision": 0.8844221105527639,
+              "recall": 0.7635574837310195,
+              "f1": 0.819557625145518
+            }
+          },
+          "sentences": 3250,
+          "words": 51362,
+          "prediction_iob2_repairs": 0,
+          "seqeval_crosscheck_passed": true
+        },
+        "intervals": {
+          "overall": {
+            "precision": {
+              "estimate": 0.7935356200527705,
+              "low": 0.7793570956472476,
+              "high": 0.8074241125899049
+            },
+            "recall": {
+              "estimate": 0.6073712554695389,
+              "low": 0.5896285820760035,
+              "high": 0.6249794581156245
+            },
+            "f1": {
+              "estimate": 0.6880838894184939,
+              "low": 0.673341188590278,
+              "high": 0.7028712655674064
+            }
+          },
+          "PER": {
+            "precision": {
+              "estimate": 0.8107255520504731,
+              "low": 0.7792739823170801,
+              "high": 0.840231606330737
+            },
+            "recall": {
+              "estimate": 0.4185667752442997,
+              "low": 0.38481882731897754,
+              "high": 0.4518282580536978
+            },
+            "f1": {
+              "estimate": 0.5520945220193341,
+              "low": 0.5169336613498728,
+              "high": 0.5863924828859935
+            }
+          },
+          "ORG": {
+            "precision": {
+              "estimate": 0.6952662721893491,
+              "low": 0.6638868467001877,
+              "high": 0.7263795981619319
+            },
+            "recall": {
+              "estimate": 0.5257270693512305,
+              "low": 0.49597039991602815,
+              "high": 0.5580213903743315
+            },
+            "f1": {
+              "estimate": 0.5987261146496815,
+              "low": 0.5717919012559549,
+              "high": 0.6253798601888608
+            }
+          },
+          "LOC": {
+            "precision": {
+              "estimate": 0.799664241745943,
+              "low": 0.7803643761043897,
+              "high": 0.8184355803834398
+            },
+            "recall": {
+              "estimate": 0.7778987479586282,
+              "low": 0.7564724227180796,
+              "high": 0.7983964144625909
+            },
+            "f1": {
+              "estimate": 0.7886313465783664,
+              "low": 0.7725161857435712,
+              "high": 0.8038938034648647
+            }
+          },
+          "MISC": {
+            "precision": {
+              "estimate": 0.8844221105527639,
+              "low": 0.86049539652647,
+              "high": 0.9064586078173034
+            },
+            "recall": {
+              "estimate": 0.7635574837310195,
+              "low": 0.7306067322463095,
+              "high": 0.7954796748950786
+            },
+            "f1": {
+              "estimate": 0.819557625145518,
+              "low": 0.7945509959291606,
+              "high": 0.843733787814047
+            }
+          }
+        },
+        "zero_f1_denominator_draws": {
+          "overall": 0,
+          "PER": 0,
+          "ORG": 0,
+          "LOC": 0,
+          "MISC": 0
+        },
+        "limitation": "Conditional on fixed trained models and sentence resampling; does not include training-seed variance or within-document dependence."
+      }
+    },
+    "test": {
+      "identity": {
+        "contract_sha256": "8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+        "model_sha256": "e928a4ba225849cf78babe2e6041c910dc8b69103f865ae36165a71810b9a41c",
+        "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+        "split": "test",
+        "predictions_sha256": "0ea9a19adee61782ad80645a35da91f6cee076aa129aec23d68950b5158a4abe",
+        "bootstrap": {
+          "n_resamples": 2000,
+          "confidence": 0.95,
+          "seed": 2026
+        }
+      },
+      "metrics": {
+        "contract": "ner-entity-metrics-v1",
+        "overall": {
+          "tp": 2641,
+          "fp": 1022,
+          "fn": 3007,
+          "support": 5648,
+          "predicted": 3663,
+          "precision": 0.7209937209937209,
+          "recall": 0.46759915014164305,
+          "f1": 0.5672860057995919
+        },
+        "per_type": {
+          "PER": {
+            "tp": 231,
+            "fp": 173,
+            "fn": 1386,
+            "support": 1617,
+            "predicted": 404,
+            "precision": 0.5717821782178217,
+            "recall": 0.14285714285714285,
+            "f1": 0.22859970311726868
+          },
+          "ORG": {
+            "tp": 718,
+            "fp": 306,
+            "fn": 943,
+            "support": 1661,
+            "predicted": 1024,
+            "precision": 0.701171875,
+            "recall": 0.43226971703792894,
+            "f1": 0.5348230912476722
+          },
+          "LOC": {
+            "tp": 1227,
+            "fp": 423,
+            "fn": 441,
+            "support": 1668,
+            "predicted": 1650,
+            "precision": 0.7436363636363637,
+            "recall": 0.7356115107913669,
+            "f1": 0.7396021699819169
+          },
+          "MISC": {
+            "tp": 465,
+            "fp": 120,
+            "fn": 237,
+            "support": 702,
+            "predicted": 585,
+            "precision": 0.7948717948717948,
+            "recall": 0.6623931623931624,
+            "f1": 0.7226107226107226
+          }
+        },
+        "sentences": 3453,
+        "words": 46435,
+        "prediction_iob2_repairs": 0,
+        "seqeval_crosscheck_passed": true
+      },
+      "bootstrap": {
+        "method": "sentence_percentile",
+        "seed": 2026,
+        "n_resamples": 2000,
+        "confidence": 0.95,
+        "unit": "original sentence",
+        "point": {
+          "contract": "ner-entity-metrics-v1",
+          "overall": {
+            "tp": 2641,
+            "fp": 1022,
+            "fn": 3007,
+            "support": 5648,
+            "predicted": 3663,
+            "precision": 0.7209937209937209,
+            "recall": 0.46759915014164305,
+            "f1": 0.5672860057995919
+          },
+          "per_type": {
+            "PER": {
+              "tp": 231,
+              "fp": 173,
+              "fn": 1386,
+              "support": 1617,
+              "predicted": 404,
+              "precision": 0.5717821782178217,
+              "recall": 0.14285714285714285,
+              "f1": 0.22859970311726868
+            },
+            "ORG": {
+              "tp": 718,
+              "fp": 306,
+              "fn": 943,
+              "support": 1661,
+              "predicted": 1024,
+              "precision": 0.701171875,
+              "recall": 0.43226971703792894,
+              "f1": 0.5348230912476722
+            },
+            "LOC": {
+              "tp": 1227,
+              "fp": 423,
+              "fn": 441,
+              "support": 1668,
+              "predicted": 1650,
+              "precision": 0.7436363636363637,
+              "recall": 0.7356115107913669,
+              "f1": 0.7396021699819169
+            },
+            "MISC": {
+              "tp": 465,
+              "fp": 120,
+              "fn": 237,
+              "support": 702,
+              "predicted": 585,
+              "precision": 0.7948717948717948,
+              "recall": 0.6623931623931624,
+              "f1": 0.7226107226107226
+            }
+          },
+          "sentences": 3453,
+          "words": 46435,
+          "prediction_iob2_repairs": 0,
+          "seqeval_crosscheck_passed": true
+        },
+        "intervals": {
+          "overall": {
+            "precision": {
+              "estimate": 0.7209937209937209,
+              "low": 0.7044580063863739,
+              "high": 0.7375749287338967
+            },
+            "recall": {
+              "estimate": 0.46759915014164305,
+              "low": 0.45181524596797523,
+              "high": 0.4829131925341426
+            },
+            "f1": {
+              "estimate": 0.5672860057995919,
+              "low": 0.5520276679749433,
+              "high": 0.5823211359056802
+            }
+          },
+          "PER": {
+            "precision": {
+              "estimate": 0.5717821782178217,
+              "low": 0.5117448166618564,
+              "high": 0.6253113432732555
+            },
+            "recall": {
+              "estimate": 0.14285714285714285,
+              "low": 0.12119192315785789,
+              "high": 0.1650749906747987
+            },
+            "f1": {
+              "estimate": 0.22859970311726868,
+              "low": 0.19704409938912487,
+              "high": 0.26071659194187796
+            }
+          },
+          "ORG": {
+            "precision": {
+              "estimate": 0.701171875,
+              "low": 0.6704120045429575,
+              "high": 0.7296418574959488
+            },
+            "recall": {
+              "estimate": 0.43226971703792894,
+              "low": 0.40495339607551195,
+              "high": 0.4590981764756719
+            },
+            "f1": {
+              "estimate": 0.5348230912476722,
+              "low": 0.507850202439184,
+              "high": 0.560469059844316
+            }
+          },
+          "LOC": {
+            "precision": {
+              "estimate": 0.7436363636363637,
+              "low": 0.7230460372283386,
+              "high": 0.7654562164253846
+            },
+            "recall": {
+              "estimate": 0.7356115107913669,
+              "low": 0.7129861263998016,
+              "high": 0.7581204684439292
+            },
+            "f1": {
+              "estimate": 0.7396021699819169,
+              "low": 0.7223693945714851,
+              "high": 0.7578005128076208
+            }
+          },
+          "MISC": {
+            "precision": {
+              "estimate": 0.7948717948717948,
+              "low": 0.7579285680667336,
+              "high": 0.8305385172552903
+            },
+            "recall": {
+              "estimate": 0.6623931623931624,
+              "low": 0.6229707645402165,
+              "high": 0.7007333551326949
+            },
+            "f1": {
+              "estimate": 0.7226107226107226,
+              "low": 0.6907290395340574,
+              "high": 0.7536940505977203
+            }
+          }
+        },
+        "zero_f1_denominator_draws": {
+          "overall": 0,
+          "PER": 0,
+          "ORG": 0,
+          "LOC": 0,
+          "MISC": 0
+        },
+        "limitation": "Conditional on fixed trained models and sentence resampling; does not include training-seed variance or within-document dependence."
+      }
+    }
+  },
+  "evaluation_receipts": {
+    "validation": {
+      "prediction_path": "/root/cs5489_ner_local/results/predictions/memory_8bcaedf7c4f6ada7d1b3_validation.jsonl",
+      "metadata_path": "/root/cs5489_ner_local/results/predictions/memory_8bcaedf7c4f6ada7d1b3_validation.meta.json",
+      "evaluation_path": "/root/cs5489_ner_local/results/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb/validation_evaluation.json",
+      "prediction_sha256": "e8fa2615acd81c1ad402c34754ede6040ca11a4cc45252ac76dc01cdbe9c3830",
+      "evaluation_sha256": "154765a2ca799645e38514ba2219ef14a01e224d10a75b765693ce418d0432b1",
+      "reused_predictions": false,
+      "reused_evaluation": false,
+      "sentences": 3250,
+      "words": 51362,
+      "read_back_verified": true
+    },
+    "test": {
+      "prediction_path": "/root/cs5489_ner_local/results/predictions/memory_8bcaedf7c4f6ada7d1b3_test.jsonl",
+      "metadata_path": "/root/cs5489_ner_local/results/predictions/memory_8bcaedf7c4f6ada7d1b3_test.meta.json",
+      "evaluation_path": "/root/cs5489_ner_local/results/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb/test_evaluation.json",
+      "prediction_sha256": "0ea9a19adee61782ad80645a35da91f6cee076aa129aec23d68950b5158a4abe",
+      "evaluation_sha256": "063307b9e6870bba6cd6c8208c6beb5190e5969ce0f95343695f6261da901536",
+      "reused_predictions": false,
+      "reused_evaluation": false,
+      "sentences": 3453,
+      "words": 46435,
+      "read_back_verified": true
+    }
+  },
+  "paper_comparison": [
+    {
+      "metric": "precision",
+      "measured": 0.7209937209937209,
+      "paper_reference": 0.7191,
+      "difference_percentage_points": 0.1893720993720982,
+      "source": "https://aclanthology.org/W03-0419.pdf (section 3.4, Table 5)",
+      "interpretation": "Historical context only; not a tuning target or exact-reproduction claim."
+    },
+    {
+      "metric": "recall",
+      "measured": 0.46759915014164305,
+      "paper_reference": 0.509,
+      "difference_percentage_points": -4.140084985835696,
+      "source": "https://aclanthology.org/W03-0419.pdf (section 3.4, Table 5)",
+      "interpretation": "Historical context only; not a tuning target or exact-reproduction claim."
+    },
+    {
+      "metric": "f1",
+      "measured": 0.5672860057995919,
+      "paper_reference": 0.5961,
+      "difference_percentage_points": -2.881399420040809,
+      "source": "https://aclanthology.org/W03-0419.pdf (section 3.4, Table 5)",
+      "interpretation": "Historical context only; not a tuning target or exact-reproduction claim."
+    }
+  ],
+  "synthetic_checks": {
+    "synthetic_only": true,
+    "cases": [
+      {
+        "case": "longer_at_same_start",
+        "tokens": [
+          "New",
+          "York"
+        ],
+        "expected": [
+          "B-LOC",
+          "I-LOC"
+        ],
+        "actual": [
+          "B-LOC",
+          "I-LOC"
+        ],
+        "passed": true
+      },
+      {
+        "case": "longer_crossing_later_start",
+        "tokens": [
+          "New",
+          "York",
+          "University",
+          "Press"
+        ],
+        "expected": [
+          "O",
+          "B-ORG",
+          "I-ORG",
+          "I-ORG"
+        ],
+        "actual": [
+          "O",
+          "B-ORG",
+          "I-ORG",
+          "I-ORG"
+        ],
+        "passed": true
+      },
+      {
+        "case": "ambiguous_discarded",
+        "tokens": [
+          "Jordan"
+        ],
+        "expected": [
+          "O"
+        ],
+        "actual": [
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "case_sensitive",
+        "tokens": [
+          "new",
+          "York"
+        ],
+        "expected": [
+          "O",
+          "B-ORG"
+        ],
+        "actual": [
+          "O",
+          "B-ORG"
+        ],
+        "passed": true
+      },
+      {
+        "case": "adjacent_entities",
+        "tokens": [
+          "Ana",
+          "Ana"
+        ],
+        "expected": [
+          "B-PER",
+          "B-PER"
+        ],
+        "actual": [
+          "B-PER",
+          "B-PER"
+        ],
+        "passed": true
+      },
+      {
+        "case": "no_substring",
+        "tokens": [
+          "Anabel"
+        ],
+        "expected": [
+          "O"
+        ],
+        "actual": [
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "no_invented_subphrase",
+        "tokens": [
+          "University"
+        ],
+        "expected": [
+          "O"
+        ],
+        "actual": [
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "equal_length_earlier_start",
+        "tokens": [
+          "A",
+          "B",
+          "C"
+        ],
+        "expected": [
+          "B-LOC",
+          "I-LOC",
+          "O"
+        ],
+        "actual": [
+          "B-LOC",
+          "I-LOC",
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "unseen_all_o",
+        "tokens": [
+          "Nobody",
+          "here"
+        ],
+        "expected": [
+          "O",
+          "O"
+        ],
+        "actual": [
+          "O",
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "empty_input",
+        "tokens": [],
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "sentence_boundary_passed": true,
+    "permuted_metadata_passed": true,
+    "o_is_not_entity_type_passed": true
+  },
+  "fit_split": "train",
+  "hyperparameter_search": false,
+  "final_config_frozen_before_validation_and_test": true,
+  "gate1_pipeline_checks_passed": true,
+  "acceptance": "Awaiting computer ZIP download and external review.",
+  "test_error_analysis": false
+}

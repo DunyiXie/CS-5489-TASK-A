@@ -1,0 +1,7 @@
+tokenizer,split,sentences,chunks,over_max_length_sentences,max_full_length,multi_piece_words,unknown_pieces,original_words,supervised_words,dropped_words,duplicated_words,masked_special_tokens,masked_continuation_tokens,max_chunk_length,gold_roundtrip_passed,batch_shape,padding_positions,padding_labels_verified,ordered_alignment_sha256
+bert_base_cased,train,14041,14041,0,173,34299,0,203621,203621,0,0,28082,68974,173,True,"[2, 173]",170,True,4f2262d059ac7170b51bbe8c524146d88afbd0fc5a08be10e3d02a7dc60145c4
+bert_base_cased,validation,3250,3250,0,151,8229,0,51362,51362,0,0,6500,16586,151,True,"[2, 151]",148,True,f08223cd82ee0850fb952f3c594608f7264f7fd5023761465269e066e26faa91
+bert_base_cased,test,3453,3453,0,148,8287,0,46435,46435,0,0,6906,17026,148,True,"[2, 148]",145,True,bdbee4918cbbc92ac46cc87971bf91c17def904f816426ac7ef0f3c875008207
+roberta_base,train,14041,14041,0,156,31951,0,203621,203621,0,0,28082,56560,156,True,"[2, 156]",153,True,85d9026c58f635b8ad3a57dc46dc3a0f3ad5637ae948122c6b26d2f67a653cab
+roberta_base,validation,3250,3250,0,146,7798,0,51362,51362,0,0,6500,13820,146,True,"[2, 146]",143,True,28240b59efc1c8a58aeae308ee3241d87c4f5848b25b62b70da5756535761561
+roberta_base,test,3453,3453,0,143,7716,0,46435,46435,0,0,6906,13901,143,True,"[2, 143]",140,True,45415bed734e9687d93b39e1cc9e47c4555f0b5c09184193dea7a307dd03105f

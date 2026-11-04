@@ -1,0 +1,3958 @@
+{
+  "run_id": "20261101T180441Z-d01788bb",
+  "notebook_revision": "2026-11-02-preprocessing-v1",
+  "seed": 42,
+  "policy": {
+    "max_length": 256,
+    "includes_special_tokens": true,
+    "scheme": "IOB2 labels retained from metadata; no relabeling at chunk boundaries.",
+    "supervision": "First subword of each original word only; continuation/special/padding labels are -100.",
+    "chunking": "Greedy nonoverlapping complete-word chunks based only on tokenized word lengths; never gold entities.",
+    "oversized_word": "Raise an error if one word exceeds the content budget or produces no subword; never silently discard it.",
+    "evaluation": "Reassemble each original sentence in word order before entity metrics; do not score chunks separately.",
+    "context_limit": "Whole-word chunking can cut through an entity and limits cross-chunk context; original gold labels are preserved.",
+    "padding": "Dynamic right-padding per batch; strip alignment metadata before passing a batch to a model.",
+    "model_work": "Tokenizer preparation only: no model weights, training, predictions or F1 scoring."
+  },
+  "label_mapping": {
+    "label_names": [
+      "O",
+      "B-PER",
+      "I-PER",
+      "B-ORG",
+      "I-ORG",
+      "B-LOC",
+      "I-LOC",
+      "B-MISC",
+      "I-MISC"
+    ],
+    "label2id": {
+      "O": 0,
+      "B-PER": 1,
+      "I-PER": 2,
+      "B-ORG": 3,
+      "I-ORG": 4,
+      "B-LOC": 5,
+      "I-LOC": 6,
+      "B-MISC": 7,
+      "I-MISC": 8
+    },
+    "id2label": {
+      "0": "O",
+      "1": "B-PER",
+      "2": "I-PER",
+      "3": "B-ORG",
+      "4": "I-ORG",
+      "5": "B-LOC",
+      "6": "I-LOC",
+      "7": "B-MISC",
+      "8": "I-MISC"
+    },
+    "scheme": "IOB2"
+  },
+  "accepted_reference": {
+    "date": "2026-11-01",
+    "evidence": "NER_step2_20261101T124840Z_e05b4ba0.zip",
+    "archive_sha256": "4b77cf2de940fb7b51a2a91fb757a33cc0698a3ea26ee655849e48659afd1e55"
+  },
+  "source": {
+    "requested_source": "eriktks/conll2003",
+    "actual_source": "tomaarsen/conll2003",
+    "revision": "3a0c0677d3177b6122fceed3239dda7a5de6a514",
+    "format": "parquet",
+    "source_url": "https://huggingface.co/datasets/tomaarsen/conll2003/tree/3a0c0677d3177b6122fceed3239dda7a5de6a514",
+    "reason": "Development document permits Parquet fallback; datasets 4.0 removes loading scripts.",
+    "license_as_stated_by_card": "other",
+    "source_files": [
+      {
+        "path": "data/train-00000-of-00001.parquet",
+        "size_bytes": 1241085,
+        "sha256": "28924b53e43ec4d741cbef16d8a6245a77f404a77f18d44e256f95fa29acb59b"
+      },
+      {
+        "path": "data/validation-00000-of-00001.parquet",
+        "size_bytes": 315597,
+        "sha256": "0aa0bd59cf9ac8f60252d8194a8a223b650daba50f8e5a79284abf85420bfe84"
+      },
+      {
+        "path": "data/test-00000-of-00001.parquet",
+        "size_bytes": 287552,
+        "sha256": "9242163e112f99b43c32b663c6d6f7d5df64de73e19e02fcac789935f72565b8"
+      },
+      {
+        "path": "README.md",
+        "size_bytes": 14967,
+        "sha256": "a6812e0cca383af9f4c316f8abe43169ddda7230c2686ba314629e59a41a66b9"
+      }
+    ],
+    "preprocessing": "None: no shuffle, split, filtering, label conversion or token normalization.",
+    "parity_scope": "Split sizes, metadata, all-row structure/IOB2 and ordered content hashes checked. Byte-for-byte equivalence to eriktks/conll2003 has not been established.",
+    "recorded_at_utc": "2026-11-01T18:04:43.266925+00:00"
+  },
+  "ordered_data_audit": {
+    "splits": {
+      "train": {
+        "rows": 14041,
+        "tokens": 203621,
+        "ordered_core_sha256": "aa1208d2f06bc11610d0d9527af175e282ca0f4092a06a5a9381240e1dfece6a",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 946
+      },
+      "validation": {
+        "rows": 3250,
+        "tokens": 51362,
+        "ordered_core_sha256": "91c3c12a9140e03ca679f24dc0437cdbae033babea946388677e46f9a52a78c2",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 216
+      },
+      "test": {
+        "rows": 3453,
+        "tokens": 46435,
+        "ordered_core_sha256": "bbdf60c2c1c3fbd1e7cb6a865d9d4dfd9df0110dff115de49f972175df7d3882",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 231
+      }
+    },
+    "label_names": {
+      "pos_tags": [
+        "\"",
+        "''",
+        "#",
+        "$",
+        "(",
+        ")",
+        ",",
+        ".",
+        ":",
+        "``",
+        "CC",
+        "CD",
+        "DT",
+        "EX",
+        "FW",
+        "IN",
+        "JJ",
+        "JJR",
+        "JJS",
+        "LS",
+        "MD",
+        "NN",
+        "NNP",
+        "NNPS",
+        "NNS",
+        "NN|SYM",
+        "PDT",
+        "POS",
+        "PRP",
+        "PRP$",
+        "RB",
+        "RBR",
+        "RBS",
+        "RP",
+        "SYM",
+        "TO",
+        "UH",
+        "VB",
+        "VBD",
+        "VBG",
+        "VBN",
+        "VBP",
+        "VBZ",
+        "WDT",
+        "WP",
+        "WP$",
+        "WRB"
+      ],
+      "chunk_tags": [
+        "O",
+        "B-ADJP",
+        "I-ADJP",
+        "B-ADVP",
+        "I-ADVP",
+        "B-CONJP",
+        "I-CONJP",
+        "B-INTJ",
+        "I-INTJ",
+        "B-LST",
+        "I-LST",
+        "B-NP",
+        "I-NP",
+        "B-PP",
+        "I-PP",
+        "B-PRT",
+        "I-PRT",
+        "B-SBAR",
+        "I-SBAR",
+        "B-UCP",
+        "I-UCP",
+        "B-VP",
+        "I-VP"
+      ],
+      "ner_tags": [
+        "O",
+        "B-PER",
+        "I-PER",
+        "B-ORG",
+        "I-ORG",
+        "B-LOC",
+        "I-LOC",
+        "B-MISC",
+        "I-MISC"
+      ]
+    },
+    "iob2_violations": 0,
+    "hash_format": "core-fields-decoded-tags-jsonl-utf8-v1"
+  },
+  "tokenizer_sources": {
+    "bert_base_cased": {
+      "key": "bert_base_cased",
+      "repo_id": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "files": [
+        "config.json",
+        "tokenizer_config.json",
+        "tokenizer.json",
+        "vocab.txt"
+      ],
+      "kwargs": {},
+      "source_files": [
+        {
+          "path": "config.json",
+          "size_bytes": 570,
+          "sha256": "8b73abed2d67075fd3ec0f840aa53d9cccdc9169c04a7da135c07e721910ed74"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 49,
+          "sha256": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 435797,
+          "sha256": "5b3360be30cdf39081153cf9d30bfb0503c011462fc9f77f097127c83ef0f4d9"
+        },
+        {
+          "path": "vocab.txt",
+          "size_bytes": 213450,
+          "sha256": "eeaa9875b23b04b4c54ef759d03db9d1ba1554838f8fb26c5d96fa551df93d02"
+        }
+      ],
+      "tokenizer_class": "BertTokenizerFast",
+      "model_max_length": 512,
+      "padding_side": "right",
+      "special_tokens_per_sentence": 2
+    },
+    "roberta_base": {
+      "key": "roberta_base",
+      "repo_id": "FacebookAI/roberta-base",
+      "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+      "files": [
+        "config.json",
+        "tokenizer_config.json",
+        "tokenizer.json",
+        "vocab.json",
+        "merges.txt"
+      ],
+      "kwargs": {
+        "add_prefix_space": true
+      },
+      "source_files": [
+        {
+          "path": "config.json",
+          "size_bytes": 481,
+          "sha256": "ef0185e2aae6e06c5f105a285006952c340e20c7dbf43c86ec82601b13fc45e9"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 25,
+          "sha256": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 1355863,
+          "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e"
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 898823,
+          "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655"
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 456318,
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+        }
+      ],
+      "tokenizer_class": "RobertaTokenizerFast",
+      "model_max_length": 512,
+      "padding_side": "right",
+      "special_tokens_per_sentence": 2
+    }
+  },
+  "synthetic_checks": {
+    "bert_base_cased": {
+      "synthetic_only": true,
+      "forced_max_length": 64,
+      "sentences": [
+        {
+          "sentence_index": 0,
+          "sentence_id": "synthetic-short",
+          "words": 6,
+          "full_length": 10,
+          "chunks": 1,
+          "multi_piece_words": 1,
+          "unknown_pieces": 0
+        },
+        {
+          "sentence_index": 1,
+          "sentence_id": "synthetic-long",
+          "words": 182,
+          "full_length": 544,
+          "chunks": 9,
+          "multi_piece_words": 180,
+          "unknown_pieces": 0
+        },
+        {
+          "sentence_index": 2,
+          "sentence_id": "synthetic-symbols",
+          "words": 6,
+          "full_length": 20,
+          "chunks": 1,
+          "multi_piece_words": 5,
+          "unknown_pieces": 0
+        }
+      ],
+      "audit": {
+        "original_words": 194,
+        "supervised_words": 194,
+        "dropped_words": 0,
+        "duplicated_words": 0,
+        "masked_special_tokens": 22,
+        "masked_continuation_tokens": 374,
+        "max_chunk_length": 63,
+        "gold_roundtrip_passed": true
+      },
+      "padding": {
+        "batch_shape": [
+          2,
+          63
+        ],
+        "padding_positions": 53,
+        "padding_labels_verified": true
+      }
+    },
+    "roberta_base": {
+      "synthetic_only": true,
+      "forced_max_length": 64,
+      "sentences": [
+        {
+          "sentence_index": 0,
+          "sentence_id": "synthetic-short",
+          "words": 6,
+          "full_length": 11,
+          "chunks": 1,
+          "multi_piece_words": 1,
+          "unknown_pieces": 0
+        },
+        {
+          "sentence_index": 1,
+          "sentence_id": "synthetic-long",
+          "words": 182,
+          "full_length": 724,
+          "chunks": 12,
+          "multi_piece_words": 180,
+          "unknown_pieces": 0
+        },
+        {
+          "sentence_index": 2,
+          "sentence_id": "synthetic-symbols",
+          "words": 6,
+          "full_length": 23,
+          "chunks": 1,
+          "multi_piece_words": 5,
+          "unknown_pieces": 0
+        }
+      ],
+      "audit": {
+        "original_words": 194,
+        "supervised_words": 194,
+        "dropped_words": 0,
+        "duplicated_words": 0,
+        "masked_special_tokens": 28,
+        "masked_continuation_tokens": 558,
+        "max_chunk_length": 63,
+        "gold_roundtrip_passed": true
+      },
+      "padding": {
+        "batch_shape": [
+          2,
+          63
+        ],
+        "padding_positions": 52,
+        "padding_labels_verified": true
+      }
+    }
+  },
+  "preparation": {
+    "bert_base_cased": {
+      "key": "bert_base_cased",
+      "path": "/root/cs5489_ner_local/data/preprocessed_20261101T180441Z-d01788bb/bert_base_cased",
+      "summaries": [
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "sentences": 14041,
+          "chunks": 14041,
+          "over_max_length_sentences": 0,
+          "max_full_length": 173,
+          "multi_piece_words": 34299,
+          "unknown_pieces": 0,
+          "original_words": 203621,
+          "supervised_words": 203621,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 28082,
+          "masked_continuation_tokens": 68974,
+          "max_chunk_length": 173,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            173
+          ],
+          "padding_positions": 170,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "4f2262d059ac7170b51bbe8c524146d88afbd0fc5a08be10e3d02a7dc60145c4"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "sentences": 3250,
+          "chunks": 3250,
+          "over_max_length_sentences": 0,
+          "max_full_length": 151,
+          "multi_piece_words": 8229,
+          "unknown_pieces": 0,
+          "original_words": 51362,
+          "supervised_words": 51362,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6500,
+          "masked_continuation_tokens": 16586,
+          "max_chunk_length": 151,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            151
+          ],
+          "padding_positions": 148,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "f08223cd82ee0850fb952f3c594608f7264f7fd5023761465269e066e26faa91"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "sentences": 3453,
+          "chunks": 3453,
+          "over_max_length_sentences": 0,
+          "max_full_length": 148,
+          "multi_piece_words": 8287,
+          "unknown_pieces": 0,
+          "original_words": 46435,
+          "supervised_words": 46435,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6906,
+          "masked_continuation_tokens": 17026,
+          "max_chunk_length": 148,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            148
+          ],
+          "padding_positions": 145,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "bdbee4918cbbc92ac46cc87971bf91c17def904f816426ac7ef0f3c875008207"
+        }
+      ],
+      "length_histograms": [
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 3,
+          "sentences": 51
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 4,
+          "sentences": 159
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 5,
+          "sentences": 211
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 6,
+          "sentences": 358
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 7,
+          "sentences": 330
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 8,
+          "sentences": 412
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 9,
+          "sentences": 375
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 10,
+          "sentences": 684
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 11,
+          "sentences": 905
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 12,
+          "sentences": 882
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 13,
+          "sentences": 691
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 14,
+          "sentences": 657
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 15,
+          "sentences": 614
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 16,
+          "sentences": 470
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 17,
+          "sentences": 402
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 18,
+          "sentences": 376
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 19,
+          "sentences": 307
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 20,
+          "sentences": 321
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 21,
+          "sentences": 256
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 22,
+          "sentences": 250
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 23,
+          "sentences": 267
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 24,
+          "sentences": 277
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 25,
+          "sentences": 250
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 26,
+          "sentences": 251
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 27,
+          "sentences": 247
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 28,
+          "sentences": 242
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 29,
+          "sentences": 235
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 30,
+          "sentences": 247
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 31,
+          "sentences": 232
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 32,
+          "sentences": 213
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 33,
+          "sentences": 220
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 34,
+          "sentences": 208
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 35,
+          "sentences": 187
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 36,
+          "sentences": 194
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 37,
+          "sentences": 167
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 38,
+          "sentences": 172
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 39,
+          "sentences": 155
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 40,
+          "sentences": 157
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 41,
+          "sentences": 143
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 42,
+          "sentences": 139
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 43,
+          "sentences": 108
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 44,
+          "sentences": 103
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 45,
+          "sentences": 107
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 46,
+          "sentences": 80
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 47,
+          "sentences": 96
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 48,
+          "sentences": 71
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 49,
+          "sentences": 76
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 50,
+          "sentences": 50
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 51,
+          "sentences": 58
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 52,
+          "sentences": 62
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 53,
+          "sentences": 37
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 54,
+          "sentences": 47
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 55,
+          "sentences": 22
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 56,
+          "sentences": 37
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 57,
+          "sentences": 29
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 58,
+          "sentences": 25
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 59,
+          "sentences": 14
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 60,
+          "sentences": 15
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 61,
+          "sentences": 10
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 62,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 63,
+          "sentences": 12
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 64,
+          "sentences": 8
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 65,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 66,
+          "sentences": 9
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 67,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 68,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 69,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 70,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 71,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 72,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 73,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 74,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 75,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 76,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 77,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 78,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 80,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 83,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 84,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 87,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 89,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 92,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "full_length": 173,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 3,
+          "sentences": 10
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 4,
+          "sentences": 41
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 5,
+          "sentences": 36
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 6,
+          "sentences": 73
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 7,
+          "sentences": 66
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 8,
+          "sentences": 69
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 9,
+          "sentences": 80
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 10,
+          "sentences": 160
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 11,
+          "sentences": 193
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 12,
+          "sentences": 187
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 13,
+          "sentences": 158
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 14,
+          "sentences": 152
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 15,
+          "sentences": 151
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 16,
+          "sentences": 136
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 17,
+          "sentences": 86
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 18,
+          "sentences": 89
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 19,
+          "sentences": 61
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 20,
+          "sentences": 61
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 21,
+          "sentences": 42
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 22,
+          "sentences": 54
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 23,
+          "sentences": 63
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 24,
+          "sentences": 53
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 25,
+          "sentences": 60
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 26,
+          "sentences": 48
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 27,
+          "sentences": 61
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 28,
+          "sentences": 53
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 29,
+          "sentences": 48
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 30,
+          "sentences": 57
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 31,
+          "sentences": 54
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 32,
+          "sentences": 55
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 33,
+          "sentences": 55
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 34,
+          "sentences": 47
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 35,
+          "sentences": 48
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 36,
+          "sentences": 62
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 37,
+          "sentences": 46
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 38,
+          "sentences": 44
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 39,
+          "sentences": 38
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 40,
+          "sentences": 32
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 41,
+          "sentences": 29
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 42,
+          "sentences": 37
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 43,
+          "sentences": 47
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 44,
+          "sentences": 36
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 45,
+          "sentences": 28
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 46,
+          "sentences": 18
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 47,
+          "sentences": 20
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 48,
+          "sentences": 21
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 49,
+          "sentences": 26
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 50,
+          "sentences": 18
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 51,
+          "sentences": 14
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 52,
+          "sentences": 20
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 53,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 54,
+          "sentences": 18
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 55,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 56,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 57,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 58,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 59,
+          "sentences": 9
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 60,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 61,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 62,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 63,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 64,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 65,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 66,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 67,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 68,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 69,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 71,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 72,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 74,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 76,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 79,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 83,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 95,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 110,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 121,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 136,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 139,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 142,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "full_length": 151,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 3,
+          "sentences": 9
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 4,
+          "sentences": 47
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 5,
+          "sentences": 48
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 6,
+          "sentences": 75
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 7,
+          "sentences": 87
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 8,
+          "sentences": 114
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 9,
+          "sentences": 75
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 10,
+          "sentences": 215
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 11,
+          "sentences": 250
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 12,
+          "sentences": 260
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 13,
+          "sentences": 222
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 14,
+          "sentences": 173
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 15,
+          "sentences": 149
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 16,
+          "sentences": 116
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 17,
+          "sentences": 110
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 18,
+          "sentences": 92
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 19,
+          "sentences": 70
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 20,
+          "sentences": 67
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 21,
+          "sentences": 57
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 22,
+          "sentences": 66
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 23,
+          "sentences": 66
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 24,
+          "sentences": 57
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 25,
+          "sentences": 50
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 26,
+          "sentences": 58
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 27,
+          "sentences": 58
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 28,
+          "sentences": 60
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 29,
+          "sentences": 54
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 30,
+          "sentences": 58
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 31,
+          "sentences": 53
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 32,
+          "sentences": 51
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 33,
+          "sentences": 36
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 34,
+          "sentences": 36
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 35,
+          "sentences": 44
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 36,
+          "sentences": 30
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 37,
+          "sentences": 34
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 38,
+          "sentences": 33
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 39,
+          "sentences": 38
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 40,
+          "sentences": 30
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 41,
+          "sentences": 31
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 42,
+          "sentences": 30
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 43,
+          "sentences": 27
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 44,
+          "sentences": 23
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 45,
+          "sentences": 12
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 46,
+          "sentences": 20
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 47,
+          "sentences": 23
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 48,
+          "sentences": 11
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 49,
+          "sentences": 14
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 50,
+          "sentences": 15
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 51,
+          "sentences": 18
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 52,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 53,
+          "sentences": 9
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 54,
+          "sentences": 8
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 55,
+          "sentences": 5
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 56,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 57,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 58,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 59,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 60,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 61,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 62,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 63,
+          "sentences": 5
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 64,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 65,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 67,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 68,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 69,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 70,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 75,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 82,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 91,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 92,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 107,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 108,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 109,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 115,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 131,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "full_length": 148,
+          "sentences": 1
+        }
+      ],
+      "overflow": [],
+      "alignment_examples": [
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 0,
+          "subword": "[CLS]",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 1,
+          "subword": "EU",
+          "word_index": 0,
+          "original_word": "EU",
+          "label_id": 3,
+          "label": "B-ORG"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 2,
+          "subword": "rejects",
+          "word_index": 1,
+          "original_word": "rejects",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 3,
+          "subword": "German",
+          "word_index": 2,
+          "original_word": "German",
+          "label_id": 7,
+          "label": "B-MISC"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 4,
+          "subword": "call",
+          "word_index": 3,
+          "original_word": "call",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 5,
+          "subword": "to",
+          "word_index": 4,
+          "original_word": "to",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 6,
+          "subword": "boycott",
+          "word_index": 5,
+          "original_word": "boycott",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 7,
+          "subword": "British",
+          "word_index": 6,
+          "original_word": "British",
+          "label_id": 7,
+          "label": "B-MISC"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 8,
+          "subword": "la",
+          "word_index": 7,
+          "original_word": "lamb",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 9,
+          "subword": "##mb",
+          "word_index": 7,
+          "original_word": "lamb",
+          "label_id": -100,
+          "label": "IGNORED"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 10,
+          "subword": ".",
+          "word_index": 8,
+          "original_word": ".",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 11,
+          "subword": "[SEP]",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 0,
+          "subword": "[CLS]",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 1,
+          "subword": "Peter",
+          "word_index": 0,
+          "original_word": "Peter",
+          "label_id": 1,
+          "label": "B-PER"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 2,
+          "subword": "Blackburn",
+          "word_index": 1,
+          "original_word": "Blackburn",
+          "label_id": 2,
+          "label": "I-PER"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 3,
+          "subword": "[SEP]",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        }
+      ],
+      "saved_files": [
+        {
+          "path": "dataset/dataset_dict.json",
+          "size_bytes": 43,
+          "sha256": "1239dbd4ca38311b03319b672c05a6fdaacc884b0034eed047659406c62eedd4"
+        },
+        {
+          "path": "dataset/test/data-00000-of-00001.arrow",
+          "size_bytes": 1759424,
+          "sha256": "b5cd1647233556c76b9322a0713034e5fd668633b0bc7cefb1959bf136238b92"
+        },
+        {
+          "path": "dataset/test/dataset_info.json",
+          "size_bytes": 1110,
+          "sha256": "fbae6584236899c2e435897b14b708a07389a1852c5dd643dea756b2d83ab49b"
+        },
+        {
+          "path": "dataset/test/state.json",
+          "size_bytes": 247,
+          "sha256": "6e8fe10771c8487f45767d43377bbf93dc3059a48c7af5989516a00280ae77a6"
+        },
+        {
+          "path": "dataset/train/data-00000-of-00001.arrow",
+          "size_bytes": 7475800,
+          "sha256": "e814d09db04964a2f6b0a89f44b3d236fadc83f9012be1f53501d1ac76b00934"
+        },
+        {
+          "path": "dataset/train/dataset_info.json",
+          "size_bytes": 1110,
+          "sha256": "fbae6584236899c2e435897b14b708a07389a1852c5dd643dea756b2d83ab49b"
+        },
+        {
+          "path": "dataset/train/state.json",
+          "size_bytes": 247,
+          "sha256": "0623e95b02be03116496f4d6318b77080f5c7f4cf666a4182b885f03c35bede2"
+        },
+        {
+          "path": "dataset/validation/data-00000-of-00001.arrow",
+          "size_bytes": 1837056,
+          "sha256": "85e84923c27696142ca500d6d5afeefb065f4702df7a2da9cf8a28460c98e903"
+        },
+        {
+          "path": "dataset/validation/dataset_info.json",
+          "size_bytes": 1110,
+          "sha256": "fbae6584236899c2e435897b14b708a07389a1852c5dd643dea756b2d83ab49b"
+        },
+        {
+          "path": "dataset/validation/state.json",
+          "size_bytes": 247,
+          "sha256": "43e732d65fb9312e74480747d4ca4225a95de8528525ed483f396603cfbc5e4d"
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "size_bytes": 125,
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "size_bytes": 668923,
+          "sha256": "343989712a36cd8b253efeaf8baf6a08b9d2583f78e395e83832e8ee9f8d8ee1"
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "size_bytes": 1222,
+          "sha256": "1c441dfe412d9d7e47c960029a48a0159c23a38a9ab41b465d90fb1f520d4ced"
+        },
+        {
+          "path": "tokenizer/vocab.txt",
+          "size_bytes": 213450,
+          "sha256": "eeaa9875b23b04b4c54ef759d03db9d1ba1554838f8fb26c5d96fa551df93d02"
+        }
+      ],
+      "read_back_verified": true
+    },
+    "roberta_base": {
+      "key": "roberta_base",
+      "path": "/root/cs5489_ner_local/data/preprocessed_20261101T180441Z-d01788bb/roberta_base",
+      "summaries": [
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "sentences": 14041,
+          "chunks": 14041,
+          "over_max_length_sentences": 0,
+          "max_full_length": 156,
+          "multi_piece_words": 31951,
+          "unknown_pieces": 0,
+          "original_words": 203621,
+          "supervised_words": 203621,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 28082,
+          "masked_continuation_tokens": 56560,
+          "max_chunk_length": 156,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            156
+          ],
+          "padding_positions": 153,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "85d9026c58f635b8ad3a57dc46dc3a0f3ad5637ae948122c6b26d2f67a653cab"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "sentences": 3250,
+          "chunks": 3250,
+          "over_max_length_sentences": 0,
+          "max_full_length": 146,
+          "multi_piece_words": 7798,
+          "unknown_pieces": 0,
+          "original_words": 51362,
+          "supervised_words": 51362,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6500,
+          "masked_continuation_tokens": 13820,
+          "max_chunk_length": 146,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            146
+          ],
+          "padding_positions": 143,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "28240b59efc1c8a58aeae308ee3241d87c4f5848b25b62b70da5756535761561"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "sentences": 3453,
+          "chunks": 3453,
+          "over_max_length_sentences": 0,
+          "max_full_length": 143,
+          "multi_piece_words": 7716,
+          "unknown_pieces": 0,
+          "original_words": 46435,
+          "supervised_words": 46435,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6906,
+          "masked_continuation_tokens": 13901,
+          "max_chunk_length": 143,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            143
+          ],
+          "padding_positions": 140,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "45415bed734e9687d93b39e1cc9e47c4555f0b5c09184193dea7a307dd03105f"
+        }
+      ],
+      "length_histograms": [
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 3,
+          "sentences": 61
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 4,
+          "sentences": 179
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 5,
+          "sentences": 230
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 6,
+          "sentences": 341
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 7,
+          "sentences": 376
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 8,
+          "sentences": 511
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 9,
+          "sentences": 684
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 10,
+          "sentences": 846
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 11,
+          "sentences": 870
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 12,
+          "sentences": 739
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 13,
+          "sentences": 715
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 14,
+          "sentences": 590
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 15,
+          "sentences": 542
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 16,
+          "sentences": 455
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 17,
+          "sentences": 416
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 18,
+          "sentences": 345
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 19,
+          "sentences": 317
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 20,
+          "sentences": 298
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 21,
+          "sentences": 297
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 22,
+          "sentences": 284
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 23,
+          "sentences": 296
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 24,
+          "sentences": 263
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 25,
+          "sentences": 226
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 26,
+          "sentences": 239
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 27,
+          "sentences": 239
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 28,
+          "sentences": 208
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 29,
+          "sentences": 210
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 30,
+          "sentences": 197
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 31,
+          "sentences": 234
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 32,
+          "sentences": 179
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 33,
+          "sentences": 189
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 34,
+          "sentences": 203
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 35,
+          "sentences": 187
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 36,
+          "sentences": 174
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 37,
+          "sentences": 158
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 38,
+          "sentences": 175
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 39,
+          "sentences": 156
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 40,
+          "sentences": 151
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 41,
+          "sentences": 126
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 42,
+          "sentences": 129
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 43,
+          "sentences": 112
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 44,
+          "sentences": 91
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 45,
+          "sentences": 91
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 46,
+          "sentences": 87
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 47,
+          "sentences": 83
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 48,
+          "sentences": 67
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 49,
+          "sentences": 60
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 50,
+          "sentences": 58
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 51,
+          "sentences": 57
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 52,
+          "sentences": 46
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 53,
+          "sentences": 35
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 54,
+          "sentences": 38
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 55,
+          "sentences": 20
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 56,
+          "sentences": 23
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 57,
+          "sentences": 26
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 58,
+          "sentences": 15
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 59,
+          "sentences": 13
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 60,
+          "sentences": 12
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 61,
+          "sentences": 13
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 62,
+          "sentences": 5
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 63,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 64,
+          "sentences": 5
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 65,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 66,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 67,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 68,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 69,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 70,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 71,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 72,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 73,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 74,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 75,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 76,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 77,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 82,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 84,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 85,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 88,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "full_length": 156,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 3,
+          "sentences": 10
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 4,
+          "sentences": 41
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 5,
+          "sentences": 37
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 6,
+          "sentences": 67
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 7,
+          "sentences": 64
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 8,
+          "sentences": 103
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 9,
+          "sentences": 175
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 10,
+          "sentences": 190
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 11,
+          "sentences": 187
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 12,
+          "sentences": 145
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 13,
+          "sentences": 160
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 14,
+          "sentences": 139
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 15,
+          "sentences": 132
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 16,
+          "sentences": 112
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 17,
+          "sentences": 91
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 18,
+          "sentences": 74
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 19,
+          "sentences": 65
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 20,
+          "sentences": 62
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 21,
+          "sentences": 61
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 22,
+          "sentences": 71
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 23,
+          "sentences": 67
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 24,
+          "sentences": 54
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 25,
+          "sentences": 68
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 26,
+          "sentences": 49
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 27,
+          "sentences": 53
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 28,
+          "sentences": 53
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 29,
+          "sentences": 48
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 30,
+          "sentences": 48
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 31,
+          "sentences": 55
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 32,
+          "sentences": 46
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 33,
+          "sentences": 40
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 34,
+          "sentences": 38
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 35,
+          "sentences": 49
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 36,
+          "sentences": 52
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 37,
+          "sentences": 38
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 38,
+          "sentences": 41
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 39,
+          "sentences": 44
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 40,
+          "sentences": 29
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 41,
+          "sentences": 43
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 42,
+          "sentences": 35
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 43,
+          "sentences": 33
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 44,
+          "sentences": 27
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 45,
+          "sentences": 27
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 46,
+          "sentences": 25
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 47,
+          "sentences": 19
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 48,
+          "sentences": 22
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 49,
+          "sentences": 21
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 50,
+          "sentences": 15
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 51,
+          "sentences": 16
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 52,
+          "sentences": 13
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 53,
+          "sentences": 11
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 54,
+          "sentences": 9
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 55,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 56,
+          "sentences": 11
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 57,
+          "sentences": 9
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 58,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 59,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 60,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 61,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 62,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 63,
+          "sentences": 5
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 64,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 65,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 66,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 68,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 69,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 70,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 72,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 73,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 74,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 75,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 76,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 79,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 81,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 97,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 106,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 117,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 126,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 136,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 140,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "full_length": 146,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 3,
+          "sentences": 10
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 4,
+          "sentences": 49
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 5,
+          "sentences": 52
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 6,
+          "sentences": 70
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 7,
+          "sentences": 109
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 8,
+          "sentences": 142
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 9,
+          "sentences": 184
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 10,
+          "sentences": 231
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 11,
+          "sentences": 267
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 12,
+          "sentences": 259
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 13,
+          "sentences": 159
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 14,
+          "sentences": 154
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 15,
+          "sentences": 121
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 16,
+          "sentences": 108
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 17,
+          "sentences": 109
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 18,
+          "sentences": 77
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 19,
+          "sentences": 81
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 20,
+          "sentences": 84
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 21,
+          "sentences": 72
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 22,
+          "sentences": 64
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 23,
+          "sentences": 67
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 24,
+          "sentences": 55
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 25,
+          "sentences": 54
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 26,
+          "sentences": 52
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 27,
+          "sentences": 53
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 28,
+          "sentences": 42
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 29,
+          "sentences": 45
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 30,
+          "sentences": 45
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 31,
+          "sentences": 42
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 32,
+          "sentences": 40
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 33,
+          "sentences": 38
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 34,
+          "sentences": 36
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 35,
+          "sentences": 42
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 36,
+          "sentences": 34
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 37,
+          "sentences": 40
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 38,
+          "sentences": 27
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 39,
+          "sentences": 37
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 40,
+          "sentences": 30
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 41,
+          "sentences": 25
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 42,
+          "sentences": 25
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 43,
+          "sentences": 27
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 44,
+          "sentences": 27
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 45,
+          "sentences": 16
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 46,
+          "sentences": 15
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 47,
+          "sentences": 15
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 48,
+          "sentences": 15
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 49,
+          "sentences": 14
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 50,
+          "sentences": 14
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 51,
+          "sentences": 9
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 52,
+          "sentences": 8
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 53,
+          "sentences": 7
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 54,
+          "sentences": 8
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 55,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 56,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 57,
+          "sentences": 5
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 58,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 59,
+          "sentences": 6
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 60,
+          "sentences": 3
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 61,
+          "sentences": 4
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 62,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 63,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 64,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 65,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 66,
+          "sentences": 2
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 67,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 69,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 70,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 83,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 89,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 91,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 102,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 103,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 106,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 109,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 127,
+          "sentences": 1
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "full_length": 143,
+          "sentences": 1
+        }
+      ],
+      "overflow": [],
+      "alignment_examples": [
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 0,
+          "subword": "<s>",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 1,
+          "subword": "ĠEU",
+          "word_index": 0,
+          "original_word": "EU",
+          "label_id": 3,
+          "label": "B-ORG"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 2,
+          "subword": "Ġrejects",
+          "word_index": 1,
+          "original_word": "rejects",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 3,
+          "subword": "ĠGerman",
+          "word_index": 2,
+          "original_word": "German",
+          "label_id": 7,
+          "label": "B-MISC"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 4,
+          "subword": "Ġcall",
+          "word_index": 3,
+          "original_word": "call",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 5,
+          "subword": "Ġto",
+          "word_index": 4,
+          "original_word": "to",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 6,
+          "subword": "Ġboycott",
+          "word_index": 5,
+          "original_word": "boycott",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 7,
+          "subword": "ĠBritish",
+          "word_index": 6,
+          "original_word": "British",
+          "label_id": 7,
+          "label": "B-MISC"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 8,
+          "subword": "Ġlamb",
+          "word_index": 7,
+          "original_word": "lamb",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 9,
+          "subword": "Ġ.",
+          "word_index": 8,
+          "original_word": ".",
+          "label_id": 0,
+          "label": "O"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 0,
+          "chunk_index": 0,
+          "position": 10,
+          "subword": "</s>",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 0,
+          "subword": "<s>",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 1,
+          "subword": "ĠPeter",
+          "word_index": 0,
+          "original_word": "Peter",
+          "label_id": 1,
+          "label": "B-PER"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 2,
+          "subword": "ĠBlackburn",
+          "word_index": 1,
+          "original_word": "Blackburn",
+          "label_id": 2,
+          "label": "I-PER"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "example_kind": "first_train",
+          "sentence_index": 1,
+          "chunk_index": 0,
+          "position": 3,
+          "subword": "</s>",
+          "word_index": -1,
+          "original_word": "",
+          "label_id": -100,
+          "label": "IGNORED"
+        }
+      ],
+      "saved_files": [
+        {
+          "path": "dataset/dataset_dict.json",
+          "size_bytes": 43,
+          "sha256": "1239dbd4ca38311b03319b672c05a6fdaacc884b0034eed047659406c62eedd4"
+        },
+        {
+          "path": "dataset/test/data-00000-of-00001.arrow",
+          "size_bytes": 1608992,
+          "sha256": "e15b3c4ddf67f6fecd38186b36875a405c300eaadcd525bb0c9738156bb21096"
+        },
+        {
+          "path": "dataset/test/dataset_info.json",
+          "size_bytes": 979,
+          "sha256": "66984d5be4e3e19e897fe1ebf1916c3b2b3c1f8f724b2035aed98ab4765017b6"
+        },
+        {
+          "path": "dataset/test/state.json",
+          "size_bytes": 247,
+          "sha256": "4e1f3d1dc0ee23c8879a286bcb544ba3bd283cfbc08e5caf42fd32bc2828d3da"
+        },
+        {
+          "path": "dataset/train/data-00000-of-00001.arrow",
+          "size_bytes": 6856464,
+          "sha256": "14578fac429df08df0b4a914c76139674299d197e67cc0b01b7b3c1a8eea4a36"
+        },
+        {
+          "path": "dataset/train/dataset_info.json",
+          "size_bytes": 979,
+          "sha256": "66984d5be4e3e19e897fe1ebf1916c3b2b3c1f8f724b2035aed98ab4765017b6"
+        },
+        {
+          "path": "dataset/train/state.json",
+          "size_bytes": 247,
+          "sha256": "34bbba15aacf472060f58ac58206488e5183b4283993ced8de13f80f46fb1847"
+        },
+        {
+          "path": "dataset/validation/data-00000-of-00001.arrow",
+          "size_bytes": 1690896,
+          "sha256": "24cd5ffe897c09df1ee38c56b62bb00840d31709a506d1bb19cf77aa9d8408f7"
+        },
+        {
+          "path": "dataset/validation/dataset_info.json",
+          "size_bytes": 979,
+          "sha256": "66984d5be4e3e19e897fe1ebf1916c3b2b3c1f8f724b2035aed98ab4765017b6"
+        },
+        {
+          "path": "dataset/validation/state.json",
+          "size_bytes": 247,
+          "sha256": "5f3235194e8100871f8edbbe03b75c0b74772c2e8d99a36338b83000eecf3131"
+        },
+        {
+          "path": "tokenizer/merges.txt",
+          "size_bytes": 456318,
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "size_bytes": 280,
+          "sha256": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f"
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "size_bytes": 3558641,
+          "sha256": "8954f883d55d8ef262cb85ca609f319c27705dc70a9e571300991c4d86282ce2"
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "size_bytes": 1245,
+          "sha256": "38b4f61b73aab22f9c2bb01d0f2be28d745e1db57ef7fcfddfa33c6ac8265444"
+        },
+        {
+          "path": "tokenizer/vocab.json",
+          "size_bytes": 798293,
+          "sha256": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e"
+        }
+      ],
+      "read_back_verified": true
+    }
+  }
+}

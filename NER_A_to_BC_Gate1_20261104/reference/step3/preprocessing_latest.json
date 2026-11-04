@@ -1,0 +1,453 @@
+{
+  "run_id": "20261101T180441Z-d01788bb",
+  "results_dir": "/root/cs5489_ner_local/results/step3_20261101T180441Z-d01788bb",
+  "policy": {
+    "max_length": 256,
+    "includes_special_tokens": true,
+    "scheme": "IOB2 labels retained from metadata; no relabeling at chunk boundaries.",
+    "supervision": "First subword of each original word only; continuation/special/padding labels are -100.",
+    "chunking": "Greedy nonoverlapping complete-word chunks based only on tokenized word lengths; never gold entities.",
+    "oversized_word": "Raise an error if one word exceeds the content budget or produces no subword; never silently discard it.",
+    "evaluation": "Reassemble each original sentence in word order before entity metrics; do not score chunks separately.",
+    "context_limit": "Whole-word chunking can cut through an entity and limits cross-chunk context; original gold labels are preserved.",
+    "padding": "Dynamic right-padding per batch; strip alignment metadata before passing a batch to a model.",
+    "model_work": "Tokenizer preparation only: no model weights, training, predictions or F1 scoring."
+  },
+  "label_mapping": {
+    "label_names": [
+      "O",
+      "B-PER",
+      "I-PER",
+      "B-ORG",
+      "I-ORG",
+      "B-LOC",
+      "I-LOC",
+      "B-MISC",
+      "I-MISC"
+    ],
+    "label2id": {
+      "O": 0,
+      "B-PER": 1,
+      "I-PER": 2,
+      "B-ORG": 3,
+      "I-ORG": 4,
+      "B-LOC": 5,
+      "I-LOC": 6,
+      "B-MISC": 7,
+      "I-MISC": 8
+    },
+    "id2label": {
+      "0": "O",
+      "1": "B-PER",
+      "2": "I-PER",
+      "3": "B-ORG",
+      "4": "I-ORG",
+      "5": "B-LOC",
+      "6": "I-LOC",
+      "7": "B-MISC",
+      "8": "I-MISC"
+    },
+    "scheme": "IOB2"
+  },
+  "tokenizer_sources": {
+    "bert_base_cased": {
+      "key": "bert_base_cased",
+      "repo_id": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "files": [
+        "config.json",
+        "tokenizer_config.json",
+        "tokenizer.json",
+        "vocab.txt"
+      ],
+      "kwargs": {},
+      "source_files": [
+        {
+          "path": "config.json",
+          "size_bytes": 570,
+          "sha256": "8b73abed2d67075fd3ec0f840aa53d9cccdc9169c04a7da135c07e721910ed74"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 49,
+          "sha256": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 435797,
+          "sha256": "5b3360be30cdf39081153cf9d30bfb0503c011462fc9f77f097127c83ef0f4d9"
+        },
+        {
+          "path": "vocab.txt",
+          "size_bytes": 213450,
+          "sha256": "eeaa9875b23b04b4c54ef759d03db9d1ba1554838f8fb26c5d96fa551df93d02"
+        }
+      ],
+      "tokenizer_class": "BertTokenizerFast",
+      "model_max_length": 512,
+      "padding_side": "right",
+      "special_tokens_per_sentence": 2
+    },
+    "roberta_base": {
+      "key": "roberta_base",
+      "repo_id": "FacebookAI/roberta-base",
+      "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+      "files": [
+        "config.json",
+        "tokenizer_config.json",
+        "tokenizer.json",
+        "vocab.json",
+        "merges.txt"
+      ],
+      "kwargs": {
+        "add_prefix_space": true
+      },
+      "source_files": [
+        {
+          "path": "config.json",
+          "size_bytes": 481,
+          "sha256": "ef0185e2aae6e06c5f105a285006952c340e20c7dbf43c86ec82601b13fc45e9"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 25,
+          "sha256": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 1355863,
+          "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e"
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 898823,
+          "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655"
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 456318,
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+        }
+      ],
+      "tokenizer_class": "RobertaTokenizerFast",
+      "model_max_length": 512,
+      "padding_side": "right",
+      "special_tokens_per_sentence": 2
+    }
+  },
+  "datasets": {
+    "bert_base_cased": {
+      "path": "/root/cs5489_ner_local/data/preprocessed_20261101T180441Z-d01788bb/bert_base_cased",
+      "summaries": [
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "train",
+          "sentences": 14041,
+          "chunks": 14041,
+          "over_max_length_sentences": 0,
+          "max_full_length": 173,
+          "multi_piece_words": 34299,
+          "unknown_pieces": 0,
+          "original_words": 203621,
+          "supervised_words": 203621,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 28082,
+          "masked_continuation_tokens": 68974,
+          "max_chunk_length": 173,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            173
+          ],
+          "padding_positions": 170,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "4f2262d059ac7170b51bbe8c524146d88afbd0fc5a08be10e3d02a7dc60145c4"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "validation",
+          "sentences": 3250,
+          "chunks": 3250,
+          "over_max_length_sentences": 0,
+          "max_full_length": 151,
+          "multi_piece_words": 8229,
+          "unknown_pieces": 0,
+          "original_words": 51362,
+          "supervised_words": 51362,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6500,
+          "masked_continuation_tokens": 16586,
+          "max_chunk_length": 151,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            151
+          ],
+          "padding_positions": 148,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "f08223cd82ee0850fb952f3c594608f7264f7fd5023761465269e066e26faa91"
+        },
+        {
+          "tokenizer": "bert_base_cased",
+          "split": "test",
+          "sentences": 3453,
+          "chunks": 3453,
+          "over_max_length_sentences": 0,
+          "max_full_length": 148,
+          "multi_piece_words": 8287,
+          "unknown_pieces": 0,
+          "original_words": 46435,
+          "supervised_words": 46435,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6906,
+          "masked_continuation_tokens": 17026,
+          "max_chunk_length": 148,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            148
+          ],
+          "padding_positions": 145,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "bdbee4918cbbc92ac46cc87971bf91c17def904f816426ac7ef0f3c875008207"
+        }
+      ],
+      "saved_files": [
+        {
+          "path": "dataset/dataset_dict.json",
+          "size_bytes": 43,
+          "sha256": "1239dbd4ca38311b03319b672c05a6fdaacc884b0034eed047659406c62eedd4"
+        },
+        {
+          "path": "dataset/test/data-00000-of-00001.arrow",
+          "size_bytes": 1759424,
+          "sha256": "b5cd1647233556c76b9322a0713034e5fd668633b0bc7cefb1959bf136238b92"
+        },
+        {
+          "path": "dataset/test/dataset_info.json",
+          "size_bytes": 1110,
+          "sha256": "fbae6584236899c2e435897b14b708a07389a1852c5dd643dea756b2d83ab49b"
+        },
+        {
+          "path": "dataset/test/state.json",
+          "size_bytes": 247,
+          "sha256": "6e8fe10771c8487f45767d43377bbf93dc3059a48c7af5989516a00280ae77a6"
+        },
+        {
+          "path": "dataset/train/data-00000-of-00001.arrow",
+          "size_bytes": 7475800,
+          "sha256": "e814d09db04964a2f6b0a89f44b3d236fadc83f9012be1f53501d1ac76b00934"
+        },
+        {
+          "path": "dataset/train/dataset_info.json",
+          "size_bytes": 1110,
+          "sha256": "fbae6584236899c2e435897b14b708a07389a1852c5dd643dea756b2d83ab49b"
+        },
+        {
+          "path": "dataset/train/state.json",
+          "size_bytes": 247,
+          "sha256": "0623e95b02be03116496f4d6318b77080f5c7f4cf666a4182b885f03c35bede2"
+        },
+        {
+          "path": "dataset/validation/data-00000-of-00001.arrow",
+          "size_bytes": 1837056,
+          "sha256": "85e84923c27696142ca500d6d5afeefb065f4702df7a2da9cf8a28460c98e903"
+        },
+        {
+          "path": "dataset/validation/dataset_info.json",
+          "size_bytes": 1110,
+          "sha256": "fbae6584236899c2e435897b14b708a07389a1852c5dd643dea756b2d83ab49b"
+        },
+        {
+          "path": "dataset/validation/state.json",
+          "size_bytes": 247,
+          "sha256": "43e732d65fb9312e74480747d4ca4225a95de8528525ed483f396603cfbc5e4d"
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "size_bytes": 125,
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "size_bytes": 668923,
+          "sha256": "343989712a36cd8b253efeaf8baf6a08b9d2583f78e395e83832e8ee9f8d8ee1"
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "size_bytes": 1222,
+          "sha256": "1c441dfe412d9d7e47c960029a48a0159c23a38a9ab41b465d90fb1f520d4ced"
+        },
+        {
+          "path": "tokenizer/vocab.txt",
+          "size_bytes": 213450,
+          "sha256": "eeaa9875b23b04b4c54ef759d03db9d1ba1554838f8fb26c5d96fa551df93d02"
+        }
+      ],
+      "read_back_verified": true
+    },
+    "roberta_base": {
+      "path": "/root/cs5489_ner_local/data/preprocessed_20261101T180441Z-d01788bb/roberta_base",
+      "summaries": [
+        {
+          "tokenizer": "roberta_base",
+          "split": "train",
+          "sentences": 14041,
+          "chunks": 14041,
+          "over_max_length_sentences": 0,
+          "max_full_length": 156,
+          "multi_piece_words": 31951,
+          "unknown_pieces": 0,
+          "original_words": 203621,
+          "supervised_words": 203621,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 28082,
+          "masked_continuation_tokens": 56560,
+          "max_chunk_length": 156,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            156
+          ],
+          "padding_positions": 153,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "85d9026c58f635b8ad3a57dc46dc3a0f3ad5637ae948122c6b26d2f67a653cab"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "validation",
+          "sentences": 3250,
+          "chunks": 3250,
+          "over_max_length_sentences": 0,
+          "max_full_length": 146,
+          "multi_piece_words": 7798,
+          "unknown_pieces": 0,
+          "original_words": 51362,
+          "supervised_words": 51362,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6500,
+          "masked_continuation_tokens": 13820,
+          "max_chunk_length": 146,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            146
+          ],
+          "padding_positions": 143,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "28240b59efc1c8a58aeae308ee3241d87c4f5848b25b62b70da5756535761561"
+        },
+        {
+          "tokenizer": "roberta_base",
+          "split": "test",
+          "sentences": 3453,
+          "chunks": 3453,
+          "over_max_length_sentences": 0,
+          "max_full_length": 143,
+          "multi_piece_words": 7716,
+          "unknown_pieces": 0,
+          "original_words": 46435,
+          "supervised_words": 46435,
+          "dropped_words": 0,
+          "duplicated_words": 0,
+          "masked_special_tokens": 6906,
+          "masked_continuation_tokens": 13901,
+          "max_chunk_length": 143,
+          "gold_roundtrip_passed": true,
+          "batch_shape": [
+            2,
+            143
+          ],
+          "padding_positions": 140,
+          "padding_labels_verified": true,
+          "ordered_alignment_sha256": "45415bed734e9687d93b39e1cc9e47c4555f0b5c09184193dea7a307dd03105f"
+        }
+      ],
+      "saved_files": [
+        {
+          "path": "dataset/dataset_dict.json",
+          "size_bytes": 43,
+          "sha256": "1239dbd4ca38311b03319b672c05a6fdaacc884b0034eed047659406c62eedd4"
+        },
+        {
+          "path": "dataset/test/data-00000-of-00001.arrow",
+          "size_bytes": 1608992,
+          "sha256": "e15b3c4ddf67f6fecd38186b36875a405c300eaadcd525bb0c9738156bb21096"
+        },
+        {
+          "path": "dataset/test/dataset_info.json",
+          "size_bytes": 979,
+          "sha256": "66984d5be4e3e19e897fe1ebf1916c3b2b3c1f8f724b2035aed98ab4765017b6"
+        },
+        {
+          "path": "dataset/test/state.json",
+          "size_bytes": 247,
+          "sha256": "4e1f3d1dc0ee23c8879a286bcb544ba3bd283cfbc08e5caf42fd32bc2828d3da"
+        },
+        {
+          "path": "dataset/train/data-00000-of-00001.arrow",
+          "size_bytes": 6856464,
+          "sha256": "14578fac429df08df0b4a914c76139674299d197e67cc0b01b7b3c1a8eea4a36"
+        },
+        {
+          "path": "dataset/train/dataset_info.json",
+          "size_bytes": 979,
+          "sha256": "66984d5be4e3e19e897fe1ebf1916c3b2b3c1f8f724b2035aed98ab4765017b6"
+        },
+        {
+          "path": "dataset/train/state.json",
+          "size_bytes": 247,
+          "sha256": "34bbba15aacf472060f58ac58206488e5183b4283993ced8de13f80f46fb1847"
+        },
+        {
+          "path": "dataset/validation/data-00000-of-00001.arrow",
+          "size_bytes": 1690896,
+          "sha256": "24cd5ffe897c09df1ee38c56b62bb00840d31709a506d1bb19cf77aa9d8408f7"
+        },
+        {
+          "path": "dataset/validation/dataset_info.json",
+          "size_bytes": 979,
+          "sha256": "66984d5be4e3e19e897fe1ebf1916c3b2b3c1f8f724b2035aed98ab4765017b6"
+        },
+        {
+          "path": "dataset/validation/state.json",
+          "size_bytes": 247,
+          "sha256": "5f3235194e8100871f8edbbe03b75c0b74772c2e8d99a36338b83000eecf3131"
+        },
+        {
+          "path": "tokenizer/merges.txt",
+          "size_bytes": 456318,
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "size_bytes": 280,
+          "sha256": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f"
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "size_bytes": 3558641,
+          "sha256": "8954f883d55d8ef262cb85ca609f319c27705dc70a9e571300991c4d86282ce2"
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "size_bytes": 1245,
+          "sha256": "38b4f61b73aab22f9c2bb01d0f2be28d745e1db57ef7fcfddfa33c6ac8265444"
+        },
+        {
+          "path": "tokenizer/vocab.json",
+          "size_bytes": 798293,
+          "sha256": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e"
+        }
+      ],
+      "read_back_verified": true
+    }
+  },
+  "verified": true,
+  "computer_download_confirmed": false
+}

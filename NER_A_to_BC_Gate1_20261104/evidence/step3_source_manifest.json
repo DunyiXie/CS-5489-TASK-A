@@ -1,0 +1,119 @@
+{
+  "format": "cs5489-ner-local-backup-v1",
+  "step": "step3",
+  "revision": "2026-11-02-preprocessing-v1",
+  "created_at_utc": "2026-11-01T18:05:30.761395+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 307,
+      "sha256": "a5c8467e56898f2203fce0445784214f024ca90eb48c3ea3e74c8ffe4d3a710c"
+    },
+    {
+      "path": "config/dataset_latest.json",
+      "size_bytes": 5817,
+      "sha256": "c6569fd1c86bf6f14cf29aca0de8b0fd1aba24e0b552e47feb762501894b10a1"
+    },
+    {
+      "path": "config/dataset_source_20261101T071156Z-3bdbd601.json",
+      "size_bytes": 1462,
+      "sha256": "762266e407abc6c3a4eca314131a3d21fb5e84cbaa13edaf3c8aa8c565631b17"
+    },
+    {
+      "path": "config/label_mapping.json",
+      "size_bytes": 503,
+      "sha256": "e952da24a0fab9a6f013b839a637ddc3512c19e6aacf18002616d13c39e087de"
+    },
+    {
+      "path": "config/preprocessing_latest.json",
+      "size_bytes": 15503,
+      "sha256": "03fee271db027763f267035236c8667012aa5180fc26a7d46a1affcdc965e1fe"
+    },
+    {
+      "path": "config/preprocessing_policy.json",
+      "size_bytes": 969,
+      "sha256": "cf017434fc5150746451f0832407ba6a7b333c86dec47bf323330174fbc5c844"
+    },
+    {
+      "path": "config/requirements-data-observed.txt",
+      "size_bytes": 100,
+      "sha256": "1877a4a5b2e4ee1b20e3040073fe20e7332b0a12a66176aefad435ed627f51cd"
+    },
+    {
+      "path": "config/step3_accepted_data_reference.json",
+      "size_bytes": 6014,
+      "sha256": "c3414bdb456935567b4754e6d7cf98a6fbe8f7670faba083021e040d8e3cdf63"
+    },
+    {
+      "path": "logs/step1_environment_20261101T071156Z-3bdbd601.json",
+      "size_bytes": 448,
+      "sha256": "0217531162369b32a0e2a7c1cf30444a55a238d162937a5613faf23bcfa5c997"
+    },
+    {
+      "path": "logs/step3_environment_20261101T180441Z-d01788bb.json",
+      "size_bytes": 3899,
+      "sha256": "cdfe8033a68a5faa64dbac21a9eeec48aed734e128c8fc66fdc1ba8b68710333"
+    },
+    {
+      "path": "results/step1_validation_20261101T071156Z-3bdbd601.json",
+      "size_bytes": 2041,
+      "sha256": "836b72f5590e853d0502fda3ecbc553c7958c6a516e3b1f72a919e37113077b8"
+    },
+    {
+      "path": "results/step3_20261101T180441Z-d01788bb/README.md",
+      "size_bytes": 1553,
+      "sha256": "213e95d1ef8aabc09118a293e07d28d734ec8e9e598982363496d69b2edda90f"
+    },
+    {
+      "path": "results/step3_20261101T180441Z-d01788bb/alignment_examples.csv",
+      "size_bytes": 1778,
+      "sha256": "27de1b080955c80154eee1a43670d98b8d62086db35cc074e965a4890d5dd83d"
+    },
+    {
+      "path": "results/step3_20261101T180441Z-d01788bb/alignment_summary.csv",
+      "size_bytes": 1345,
+      "sha256": "57f9b1d67f7292236ae602f8d13af26e489adc11d63cac1f01333fb054bd21a9"
+    },
+    {
+      "path": "results/step3_20261101T180441Z-d01788bb/overflow_sentences.csv",
+      "size_bytes": 101,
+      "sha256": "376b0042553d78f454a90044d81d29db3488483a1269d22fd145b63f951dcb2e"
+    },
+    {
+      "path": "results/step3_20261101T180441Z-d01788bb/preprocessing_report.json",
+      "size_bytes": 102122,
+      "sha256": "50b0172a3db6d8bce5ed8d54b2ff75257ee6799bdaaeb02a263ae9967596dfba"
+    },
+    {
+      "path": "results/step3_20261101T180441Z-d01788bb/synthetic_checks.json",
+      "size_bytes": 2379,
+      "sha256": "68f18938024e47729a8a02b98fa7a1197bbb8fcd83d63846f5431cf9dddf0754"
+    },
+    {
+      "path": "results/step3_20261101T180441Z-d01788bb/tokenized_length_histograms.csv",
+      "size_bytes": 13278,
+      "sha256": "748080cc177d4f07b2147b6c3b0a71cb8ba67777eebcce7a36458576bb444897"
+    },
+    {
+      "path": "src/local_backup.py",
+      "size_bytes": 8425,
+      "sha256": "193692b3a886f8d956ecee73c8eb076928e84011d7cc5626bf6901308ea6cbfc"
+    },
+    {
+      "path": "src/step1_data.py",
+      "size_bytes": 8848,
+      "sha256": "3490f52b9ae4de8627aa2f94270ad04cb61f67a327ec46bf0f60df242f3faffe"
+    },
+    {
+      "path": "src/step2_eda.py",
+      "size_bytes": 26038,
+      "sha256": "220c1cd4e95c56dc63db07b9e28dcb6f022ff45fc5aaa52bd8b96d535bf55d4b"
+    },
+    {
+      "path": "src/step3_alignment.py",
+      "size_bytes": 17967,
+      "sha256": "a919a891bfbbdfafbea04634373b08498058d8d25ac44c62a5890fcbf65731d8"
+    }
+  ],
+  "includes_checkpoints": false
+}

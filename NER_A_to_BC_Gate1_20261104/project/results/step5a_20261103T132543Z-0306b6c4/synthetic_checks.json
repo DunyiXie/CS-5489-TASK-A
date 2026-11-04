@@ -1,0 +1,773 @@
+{
+  "decoder": {
+    "synthetic_only": true,
+    "cases": [
+      {
+        "case": "longer_at_same_start",
+        "tokens": [
+          "New",
+          "York"
+        ],
+        "expected": [
+          "B-LOC",
+          "I-LOC"
+        ],
+        "actual": [
+          "B-LOC",
+          "I-LOC"
+        ],
+        "passed": true
+      },
+      {
+        "case": "longer_crossing_later_start",
+        "tokens": [
+          "New",
+          "York",
+          "University",
+          "Press"
+        ],
+        "expected": [
+          "O",
+          "B-ORG",
+          "I-ORG",
+          "I-ORG"
+        ],
+        "actual": [
+          "O",
+          "B-ORG",
+          "I-ORG",
+          "I-ORG"
+        ],
+        "passed": true
+      },
+      {
+        "case": "ambiguous_discarded",
+        "tokens": [
+          "Jordan"
+        ],
+        "expected": [
+          "O"
+        ],
+        "actual": [
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "case_sensitive",
+        "tokens": [
+          "new",
+          "York"
+        ],
+        "expected": [
+          "O",
+          "B-ORG"
+        ],
+        "actual": [
+          "O",
+          "B-ORG"
+        ],
+        "passed": true
+      },
+      {
+        "case": "adjacent_entities",
+        "tokens": [
+          "Ana",
+          "Ana"
+        ],
+        "expected": [
+          "B-PER",
+          "B-PER"
+        ],
+        "actual": [
+          "B-PER",
+          "B-PER"
+        ],
+        "passed": true
+      },
+      {
+        "case": "no_substring",
+        "tokens": [
+          "Anabel"
+        ],
+        "expected": [
+          "O"
+        ],
+        "actual": [
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "no_invented_subphrase",
+        "tokens": [
+          "University"
+        ],
+        "expected": [
+          "O"
+        ],
+        "actual": [
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "equal_length_earlier_start",
+        "tokens": [
+          "A",
+          "B",
+          "C"
+        ],
+        "expected": [
+          "B-LOC",
+          "I-LOC",
+          "O"
+        ],
+        "actual": [
+          "B-LOC",
+          "I-LOC",
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "unseen_all_o",
+        "tokens": [
+          "Nobody",
+          "here"
+        ],
+        "expected": [
+          "O",
+          "O"
+        ],
+        "actual": [
+          "O",
+          "O"
+        ],
+        "passed": true
+      },
+      {
+        "case": "empty_input",
+        "tokens": [],
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "sentence_boundary_passed": true,
+    "permuted_metadata_passed": true,
+    "o_is_not_entity_type_passed": true
+  },
+  "metrics": [
+    {
+      "case": "exact",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "support": 1,
+        "predicted": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 3,
+      "prediction_iob2_repairs": 0,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "Jane_only",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "support": 1,
+        "predicted": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "support": 1,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 2,
+      "prediction_iob2_repairs": 0,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "wrong_type",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "support": 1,
+        "predicted": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "support": 0,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 2,
+      "prediction_iob2_repairs": 0,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "missed",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "support": 1,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "support": 1,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 1,
+      "prediction_iob2_repairs": 0,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "spurious",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "support": 0,
+        "predicted": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "support": 0,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 1,
+      "prediction_iob2_repairs": 0,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "all_O",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 2,
+      "prediction_iob2_repairs": 0,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "adjacent_entities",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2,
+        "predicted": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "support": 2,
+          "predicted": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 2,
+      "prediction_iob2_repairs": 0,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "sentence_boundary",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2,
+        "predicted": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "support": 2,
+          "predicted": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 2,
+      "words": 2,
+      "prediction_iob2_repairs": 1,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "orphan_I_false_positive",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "support": 0,
+        "predicted": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "support": 0,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "ORG": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 1,
+      "prediction_iob2_repairs": 1,
+      "seqeval_crosscheck_passed": true
+    },
+    {
+      "case": "type_switch_I",
+      "synthetic_only": true,
+      "contract": "ner-entity-metrics-v1",
+      "overall": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2,
+        "predicted": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "per_type": {
+        "PER": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ORG": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "LOC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISC": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "sentences": 1,
+      "words": 2,
+      "prediction_iob2_repairs": 1,
+      "seqeval_crosscheck_passed": true
+    }
+  ]
+}

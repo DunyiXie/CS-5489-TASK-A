@@ -1,0 +1,25 @@
+﻿split,row,id,document_id,sentence_id,preview
+train,0,0,1,0,EU rejects German call to boycott British lamb .
+train,1,1,1,1,Peter Blackburn
+train,2,2,1,2,BRUSSELS 1996-08-22
+train,19,19,1,19,"It brought in 4,275 tonnes of British mutton , some 10 percent of overall imports ."
+train,20,20,2,0,"Rare Hendrix song draft sells for almost $ 17,000 ."
+train,7019,7019,437,18,Helena Sukova ( Czech Republic ) beat Yone Kamio ( Japan ) 6-2 6-3
+train,7020,7020,437,19,Irina Spirlea ( Romania ) beat Petra Begerow ( Germany ) 6-3 6-2
+train,7021,7021,437,20,Maria Jose Gaidano ( Argentina ) beat Melanie Schnell ( Austria ) 6-4 6-0
+validation,0,0,1,0,CRICKET - LEICESTERSHIRE TAKE OVER AT TOP AFTER INNINGS VICTORY .
+validation,1,1,1,1,LONDON 1996-08-30
+validation,2,2,1,2,West Indian all-rounder Phil Simmons took four for 38 on Friday as Leicestershire beat Somerset by an innings and 39 runs in two days
+validation,15,15,1,15,By stumps Kent had reached 108 for three .
+validation,16,16,2,0,CRICKET - ENGLISH COUNTY CHAMPIONSHIP SCORES .
+validation,1624,1624,98,2,"Singapore hanged a Thai farmer at Changi Prison on Friday for drug trafficking , the Central Narcotics Bureau ( CNB ) said ."
+validation,1625,1625,98,3,"Jeerasak Densakul , 24 , was arrested in 1995 when he was found with 11 slabs of cannabis weighing 2.2 kg ( 4.8 pounds"
+validation,1626,1626,98,4,Singapore has a mandatory death sentence for anyone over 18 years of age found guilty of trafficking in more than 15 grams ( half
+test,0,0,1,0,"SOCCER - JAPAN GET LUCKY WIN , CHINA IN SURPRISE DEFEAT ."
+test,1,1,1,1,Nadim Ladki
+test,2,2,1,2,"AL-AIN , United Arab Emirates 1996-12-06"
+test,21,21,1,21,All four teams are level with one point each from one game .
+test,22,22,2,0,RUGBY UNION - CUTTITTA BACK FOR ITALY AFTER A YEAR .
+test,1725,1725,117,19,Barley 110.8 1203.4 506.0 48.2 941.0 786.6
+test,1726,1726,117,20,Rye 4.1 60.7 57.9 3.0 10.7 18.9
+test,1727,1727,117,21,Flax 7.2 154.1 235.7 1.1 22.2 15.7

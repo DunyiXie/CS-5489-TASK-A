@@ -1,0 +1,211 @@
+{
+  "source": {
+    "requested_source": "eriktks/conll2003",
+    "actual_source": "tomaarsen/conll2003",
+    "revision": "3a0c0677d3177b6122fceed3239dda7a5de6a514",
+    "format": "parquet",
+    "source_url": "https://huggingface.co/datasets/tomaarsen/conll2003/tree/3a0c0677d3177b6122fceed3239dda7a5de6a514",
+    "reason": "Development document permits Parquet fallback; datasets 4.0 removes loading scripts.",
+    "license_as_stated_by_card": "other",
+    "source_files": [
+      {
+        "path": "data/train-00000-of-00001.parquet",
+        "size_bytes": 1241085,
+        "sha256": "28924b53e43ec4d741cbef16d8a6245a77f404a77f18d44e256f95fa29acb59b"
+      },
+      {
+        "path": "data/validation-00000-of-00001.parquet",
+        "size_bytes": 315597,
+        "sha256": "0aa0bd59cf9ac8f60252d8194a8a223b650daba50f8e5a79284abf85420bfe84"
+      },
+      {
+        "path": "data/test-00000-of-00001.parquet",
+        "size_bytes": 287552,
+        "sha256": "9242163e112f99b43c32b663c6d6f7d5df64de73e19e02fcac789935f72565b8"
+      },
+      {
+        "path": "README.md",
+        "size_bytes": 14967,
+        "sha256": "a6812e0cca383af9f4c316f8abe43169ddda7230c2686ba314629e59a41a66b9"
+      }
+    ],
+    "preprocessing": "None: no shuffle, split, filtering, label conversion or token normalization.",
+    "parity_scope": "Split sizes, metadata, all-row structure/IOB2 and ordered content hashes checked. Byte-for-byte equivalence to eriktks/conll2003 has not been established.",
+    "recorded_at_utc": "2026-11-03T13:25:47.243010+00:00"
+  },
+  "saved_data": {
+    "path": "/root/cs5489_ner_local/data/conll2003_20261103T132543Z-0306b6c4",
+    "read_back_verified": true,
+    "files": [
+      {
+        "path": "dataset_dict.json",
+        "size_bytes": 43,
+        "sha256": "1239dbd4ca38311b03319b672c05a6fdaacc884b0034eed047659406c62eedd4"
+      },
+      {
+        "path": "test/data-00000-of-00001.arrow",
+        "size_bytes": 1614264,
+        "sha256": "c640eee74c9972843f89bbebd941fcb18556d81218ded7184f13c21b6bf216f6"
+      },
+      {
+        "path": "test/dataset_info.json",
+        "size_bytes": 3617,
+        "sha256": "1d6c341e46278358fea4c53476e7b18c44214236df60a9d5b79470e193f248d7"
+      },
+      {
+        "path": "test/state.json",
+        "size_bytes": 249,
+        "sha256": "1403d488563621884a5b2c607f9bd2d7f6a8766ad3f3a197f3d27a6199633178"
+      },
+      {
+        "path": "train/data-00000-of-00001.arrow",
+        "size_bytes": 7056024,
+        "sha256": "d62e5b846961b150ea80d24d2ee411f1eb63365b6aa9d91631057a61246b755f"
+      },
+      {
+        "path": "train/dataset_info.json",
+        "size_bytes": 3617,
+        "sha256": "1d6c341e46278358fea4c53476e7b18c44214236df60a9d5b79470e193f248d7"
+      },
+      {
+        "path": "train/state.json",
+        "size_bytes": 250,
+        "sha256": "37142739ec20d4d34534809fe48b35558f2b04afc1d0b26fb2330636b40da080"
+      },
+      {
+        "path": "validation/data-00000-of-00001.arrow",
+        "size_bytes": 1769816,
+        "sha256": "ab07b4269a275b8a87b240b9169e245a647ab95353027f417118f321d16d5ee8"
+      },
+      {
+        "path": "validation/dataset_info.json",
+        "size_bytes": 3617,
+        "sha256": "1d6c341e46278358fea4c53476e7b18c44214236df60a9d5b79470e193f248d7"
+      },
+      {
+        "path": "validation/state.json",
+        "size_bytes": 255,
+        "sha256": "bab3d9e313e848ab00be1f3ea2c049d6595e72765834aafba75e9485082bb9bd"
+      }
+    ]
+  },
+  "audit": {
+    "splits": {
+      "train": {
+        "rows": 14041,
+        "tokens": 203621,
+        "ordered_core_sha256": "aa1208d2f06bc11610d0d9527af175e282ca0f4092a06a5a9381240e1dfece6a",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 946
+      },
+      "validation": {
+        "rows": 3250,
+        "tokens": 51362,
+        "ordered_core_sha256": "91c3c12a9140e03ca679f24dc0437cdbae033babea946388677e46f9a52a78c2",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 216
+      },
+      "test": {
+        "rows": 3453,
+        "tokens": 46435,
+        "ordered_core_sha256": "bbdf60c2c1c3fbd1e7cb6a865d9d4dfd9df0110dff115de49f972175df7d3882",
+        "id_order_verified": true,
+        "document_order_verified": true,
+        "documents": 231
+      }
+    },
+    "label_names": {
+      "pos_tags": [
+        "\"",
+        "''",
+        "#",
+        "$",
+        "(",
+        ")",
+        ",",
+        ".",
+        ":",
+        "``",
+        "CC",
+        "CD",
+        "DT",
+        "EX",
+        "FW",
+        "IN",
+        "JJ",
+        "JJR",
+        "JJS",
+        "LS",
+        "MD",
+        "NN",
+        "NNP",
+        "NNPS",
+        "NNS",
+        "NN|SYM",
+        "PDT",
+        "POS",
+        "PRP",
+        "PRP$",
+        "RB",
+        "RBR",
+        "RBS",
+        "RP",
+        "SYM",
+        "TO",
+        "UH",
+        "VB",
+        "VBD",
+        "VBG",
+        "VBN",
+        "VBP",
+        "VBZ",
+        "WDT",
+        "WP",
+        "WP$",
+        "WRB"
+      ],
+      "chunk_tags": [
+        "O",
+        "B-ADJP",
+        "I-ADJP",
+        "B-ADVP",
+        "I-ADVP",
+        "B-CONJP",
+        "I-CONJP",
+        "B-INTJ",
+        "I-INTJ",
+        "B-LST",
+        "I-LST",
+        "B-NP",
+        "I-NP",
+        "B-PP",
+        "I-PP",
+        "B-PRT",
+        "I-PRT",
+        "B-SBAR",
+        "I-SBAR",
+        "B-UCP",
+        "I-UCP",
+        "B-VP",
+        "I-VP"
+      ],
+      "ner_tags": [
+        "O",
+        "B-PER",
+        "I-PER",
+        "B-ORG",
+        "I-ORG",
+        "B-LOC",
+        "I-LOC",
+        "B-MISC",
+        "I-MISC"
+      ]
+    },
+    "iob2_violations": 0,
+    "hash_format": "core-fields-decoded-tags-jsonl-utf8-v1"
+  },
+  "recovery": "redownloaded-pinned-step1-source",
+  "run_id": "20261103T132543Z-0306b6c4"
+}

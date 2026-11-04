@@ -1,0 +1,105 @@
+{
+  "run_id": "20261103T132543Z-0306b6c4",
+  "results_dir": "/root/cs5489_ner_local/results/step5a_20261103T132543Z-0306b6c4",
+  "model_receipt": {
+    "path": "/root/cs5489_ner_local/config/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+    "contract_sha256": "8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+    "model_sha256": "e928a4ba225849cf78babe2e6041c910dc8b69103f865ae36165a71810b9a41c",
+    "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+    "read_back_verified": true
+  },
+  "artifacts": [
+    {
+      "path": "config/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb/final_config.json",
+      "size_bytes": 3730,
+      "sha256": "8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb"
+    },
+    {
+      "path": "config/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb/model.json",
+      "size_bytes": 448763,
+      "sha256": "e928a4ba225849cf78babe2e6041c910dc8b69103f865ae36165a71810b9a41c"
+    },
+    {
+      "path": "results/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb/test_evaluation.json",
+      "size_bytes": 4107,
+      "sha256": "063307b9e6870bba6cd6c8208c6beb5190e5969ce0f95343695f6261da901536"
+    },
+    {
+      "path": "results/ner-memory-baseline-v1/8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb/validation_evaluation.json",
+      "size_bytes": 4106,
+      "sha256": "154765a2ca799645e38514ba2219ef14a01e224d10a75b765693ce418d0432b1"
+    },
+    {
+      "path": "results/predictions/memory_8bcaedf7c4f6ada7d1b3_test.jsonl",
+      "size_bytes": 1241888,
+      "sha256": "0ea9a19adee61782ad80645a35da91f6cee076aa129aec23d68950b5158a4abe"
+    },
+    {
+      "path": "results/predictions/memory_8bcaedf7c4f6ada7d1b3_test.meta.json",
+      "size_bytes": 389,
+      "sha256": "29c354c2fb192886c73c4d70d37bac07d92d75cbfc68dd2a0ba3d1af1f86d281"
+    },
+    {
+      "path": "results/predictions/memory_8bcaedf7c4f6ada7d1b3_validation.jsonl",
+      "size_bytes": 1337749,
+      "sha256": "e8fa2615acd81c1ad402c34754ede6040ca11a4cc45252ac76dc01cdbe9c3830"
+    },
+    {
+      "path": "results/predictions/memory_8bcaedf7c4f6ada7d1b3_validation.meta.json",
+      "size_bytes": 395,
+      "sha256": "782d1d6e2d93afe5adc0df807c09b984917b3dc1560969abd8c971efbacac8fe"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/HANDOFF.md",
+      "size_bytes": 1944,
+      "sha256": "2adf007c2879389ef13399ec002dd48445aaffd655abb8eaf79694cfb5d4855b"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/bootstrap_intervals.csv",
+      "size_bytes": 2331,
+      "sha256": "58cca4c3970b988ef2dbb4f7de8d433756f5fee2c4106ae7a712da021573246d"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/dictionary_by_type.csv",
+      "size_bytes": 139,
+      "sha256": "a77ee28cbdcea2341db4c20030c54a4c8c54bc42141e5704b6b5ef4a50e68565"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/dictionary_lengths.csv",
+      "size_bytes": 308,
+      "sha256": "6c612cb86b008a133e3a528f25f87044e28d2b623cb5097370b13f8f7392e7fe"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/dictionary_summary.json",
+      "size_bytes": 282,
+      "sha256": "fd4f1c21ccccdf5e8261d63992d4e25c12ea5517838bd01484e3d5fcc17a01ae"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/heldout_metrics.csv",
+      "size_bytes": 975,
+      "sha256": "b5b33b071b3ff3db33c7be4ec43ee7ebb3759326c723802f9445f2c62b3699d2"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/model_receipt.json",
+      "size_bytes": 428,
+      "sha256": "66591119a893dc34091c9256f07abcc39db41d13a766a6cf01b8d60abe116217"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/paper_comparison.csv",
+      "size_bytes": 649,
+      "sha256": "84b8914824a1eff1c7b64c101ab4046d331e1657d8c34867a4eb4d609d12b453"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/step5a_report.json",
+      "size_bytes": 30193,
+      "sha256": "b9b7c63acca2623449bf3153ca085fdb148290bb8816ecfde21a6f6815407370"
+    },
+    {
+      "path": "results/step5a_20261103T132543Z-0306b6c4/synthetic_checks.json",
+      "size_bytes": 15674,
+      "sha256": "cdfa43c7c23d4d19e8fbac50e4b0378d9801657f3f02ad89379c33502f23b7d2"
+    }
+  ],
+  "verified": true,
+  "computer_download_confirmed": false
+}

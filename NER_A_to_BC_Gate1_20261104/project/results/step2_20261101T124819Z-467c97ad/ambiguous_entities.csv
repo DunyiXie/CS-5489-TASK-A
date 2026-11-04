@@ -1,0 +1,242 @@
+﻿split,surface,types,total,PER,ORG,LOC,MISC
+train,NEW YORK,LOC|ORG,95,0,30,65,0
+train,London,LOC|ORG,66,0,5,61,0
+train,CHICAGO,LOC|ORG,59,0,30,29,0
+train,New York,LOC|ORG,44,0,9,35,0
+train,American,MISC|ORG,38,0,1,0,37
+train,Chicago,LOC|ORG,32,0,5,27,0
+train,Jordan,LOC|ORG|PER,32,1,7,24,0
+train,Washington,LOC|PER,29,3,0,26,0
+train,Wimbledon,LOC|MISC|ORG,29,0,8,3,18
+train,BALTIMORE,LOC|ORG,28,0,17,11,0
+train,TORONTO,LOC|ORG,28,0,15,13,0
+train,BOSTON,LOC|ORG,24,0,16,8,0
+train,SAN FRANCISCO,LOC|ORG,24,0,15,9,0
+train,COLORADO,LOC|ORG,23,0,15,8,0
+train,HOUSTON,LOC|ORG,23,0,15,8,0
+train,KANSAS CITY,LOC|ORG,23,0,16,7,0
+train,SEATTLE,LOC|ORG,23,0,16,7,0
+train,ATLANTA,LOC|ORG,22,0,15,7,0
+train,MINNESOTA,LOC|ORG,22,0,17,5,0
+train,Paris,LOC|ORG,22,0,4,18,0
+train,California,LOC|ORG,21,0,5,16,0
+train,CLEVELAND,LOC|ORG,20,0,15,5,0
+train,DETROIT,LOC|ORG,20,0,16,4,0
+train,LOS ANGELES,LOC|ORG,20,0,15,5,0
+train,CALIFORNIA,LOC|ORG,19,0,15,4,0
+train,MONTREAL,LOC|ORG,18,0,14,4,0
+train,SAN DIEGO,LOC|ORG,18,0,14,4,0
+train,ST LOUIS,LOC|ORG,18,0,15,3,0
+train,Sao Paulo,LOC|ORG,18,0,5,13,0
+train,Atlanta,LOC|ORG,17,0,2,15,0
+train,FLORIDA,LOC|ORG,17,0,14,3,0
+train,PHILADELPHIA,LOC|ORG,17,0,15,2,0
+train,PITTSBURGH,LOC|ORG,17,0,14,3,0
+train,Barcelona,LOC|ORG,16,0,13,3,0
+train,Brussels,LOC|MISC,16,0,0,15,1
+train,Essex,LOC|ORG,16,0,15,1,0
+train,Hamburg,LOC|ORG,15,0,11,4,0
+train,MILWAUKEE,LOC|ORG,15,0,14,1,0
+train,RBI,MISC|ORG,15,0,2,0,13
+train,Texas,LOC|ORG,15,0,7,8,0
+train,Williams,ORG|PER,15,7,8,0,0
+train,Los Angeles,LOC|ORG,14,0,2,12,0
+train,America,LOC|ORG,13,0,2,11,0
+train,Hampshire,LOC|ORG,13,0,11,2,0
+train,Surrey,LOC|ORG,13,0,12,1,0
+train,Baltimore,LOC|ORG,12,0,5,7,0
+train,Boston,LOC|ORG,12,0,6,6,0
+train,Czech,LOC|MISC,12,0,0,4,8
+train,Monaco,LOC|ORG,12,0,10,2,0
+train,Portsmouth,LOC|ORG,12,0,7,5,0
+train,Seattle,LOC|ORG,12,0,7,5,0
+train,Auckland,LOC|ORG,11,0,4,7,0
+train,Chelsea,ORG|PER,11,5,6,0,0
+train,Cologne,LOC|ORG,11,0,9,2,0
+train,Colorado,LOC|ORG,11,0,1,10,0
+train,Florida,LOC|ORG,11,0,4,7,0
+train,Sydney,LOC|ORG,11,0,4,7,0
+train,Leicester,LOC|ORG,10,0,3,7,0
+train,Lotte,ORG|PER,10,3,7,0,0
+train,Milan,LOC|ORG,10,0,9,1,0
+train,San Diego,LOC|ORG,10,0,3,7,0
+train,Toronto,LOC|ORG,10,0,6,4,0
+train,Volendam,LOC|ORG,10,0,9,1,0
+train,Zurich,LOC|ORG,10,0,1,9,0
+train,Brisbane,LOC|ORG,9,0,8,1,0
+train,Cardiff,LOC|ORG,9,0,4,5,0
+train,Colchester,LOC|ORG,9,0,4,5,0
+train,Freiburg,LOC|ORG,9,0,8,1,0
+train,Melbourne,LOC|ORG,9,0,4,5,0
+train,Minnesota,LOC|ORG,9,0,3,6,0
+train,Bordeaux,LOC|ORG,8,0,6,2,0
+train,Detroit,LOC|ORG,8,0,5,3,0
+train,Lincoln,LOC|ORG|PER,8,2,5,1,0
+train,Northampton,LOC|ORG,8,0,4,4,0
+train,Oxford,LOC|ORG,8,0,7,1,0
+train,Philadelphia,LOC|ORG,8,0,7,1,0
+train,Aki,ORG|PER,7,5,2,0,0
+train,Birmingham,LOC|ORG,7,0,6,1,0
+train,Charleroi,LOC|ORG,7,0,3,4,0
+train,Indians,MISC|ORG,7,0,2,0,5
+train,Montreal,LOC|ORG,7,0,5,2,0
+train,Preston,LOC|ORG|PER,7,1,5,1,0
+train,St Louis,LOC|ORG,7,0,5,2,0
+train,Taibe,LOC|ORG,7,0,4,3,0
+train,Canberra,LOC|ORG,6,0,4,2,0
+train,Akron,LOC|ORG,5,0,1,4,0
+train,Antwerp,LOC|ORG,5,0,3,2,0
+train,Cambridge,LOC|ORG,5,0,4,1,0
+train,Chesterfield,LOC|ORG,5,0,4,1,0
+train,Houston,LOC|ORG,5,0,1,4,0
+train,MILAN,LOC|ORG,5,0,1,4,0
+train,Pittsburgh,LOC|ORG,5,0,4,1,0
+train,Republic,LOC|MISC,5,0,0,4,1
+train,Sierra,LOC|ORG,5,0,2,3,0
+train,South,LOC|ORG,5,0,1,4,0
+train,Southampton,LOC|ORG,5,0,4,1,0
+train,Stuttgart,LOC|ORG,5,0,3,2,0
+train,BARCELONA,LOC|ORG,4,0,3,1,0
+train,Bombay,LOC|MISC,4,0,0,3,1
+train,COMEX,MISC|ORG,4,0,3,0,1
+train,Dundee,ORG|PER,4,1,3,0,0
+train,Hamilton,LOC|ORG|PER,4,1,2,1,0
+train,McCarthy,ORG|PER,4,2,2,0,0
+train,Nottingham Forest,LOC|ORG,4,0,3,1,0
+train,Sheffield,ORG|PER,4,1,3,0,0
+train,TM,MISC|ORG,4,0,1,0,3
+train,Ulsan,LOC|ORG,4,0,3,1,0
+train,Black,LOC|PER,3,2,0,1,0
+train,CIS,LOC|ORG,3,0,1,2,0
+train,Doetinchem,LOC|ORG,3,0,1,2,0
+train,Griqualand West,LOC|ORG,3,0,1,2,0
+train,Inverness,LOC|ORG,3,0,2,1,0
+train,Kan,LOC|PER,3,2,0,1,0
+train,Verona,LOC|ORG|PER,3,1,1,1,0
+train,West,LOC|MISC,3,0,0,2,1
+train,AL,LOC|MISC,2,0,0,1,1
+train,Bremen,LOC|ORG,2,0,1,1,0
+train,Bristol,LOC|ORG,2,0,1,1,0
+train,ESSEX,LOC|ORG,2,0,1,1,0
+train,GENOA,LOC|ORG,2,0,1,1,0
+train,Hanson,ORG|PER,2,1,1,0,0
+train,LEEDS,LOC|ORG,2,0,1,1,0
+train,Lausanne,LOC|ORG,2,0,1,1,0
+train,Lisbon,LOC|ORG,2,0,1,1,0
+train,Morton,ORG|PER,2,1,1,0,0
+train,NICE,LOC|ORG,2,0,1,1,0
+train,PORTO,LOC|ORG,2,0,1,1,0
+train,Paramount,LOC|ORG,2,0,1,1,0
+train,ST HELENS,LOC|ORG,2,0,1,1,0
+train,Sabourin,LOC|PER,2,1,0,1,0
+train,Tel Aviv,LOC|ORG,2,0,1,1,0
+train,Telfer,LOC|PER,2,1,0,1,0
+validation,NEW YORK,LOC|ORG,26,0,8,18,0
+validation,Chicago,LOC|ORG,15,0,2,13,0
+validation,CHICAGO,LOC|ORG,13,0,8,5,0
+validation,Jordan,LOC|PER,11,8,0,3,0
+validation,Berlin,LOC|MISC,10,0,0,9,1
+validation,MILWAUKEE,LOC|ORG,10,0,4,6,0
+validation,Washington,LOC|PER,10,7,0,3,0
+validation,Texas,LOC|ORG,8,0,1,7,0
+validation,DETROIT,LOC|ORG,7,0,4,3,0
+validation,New York,LOC|ORG,7,0,2,5,0
+validation,Atlanta,LOC|ORG,6,0,4,2,0
+validation,CALIFORNIA,LOC|ORG,6,0,4,2,0
+validation,CINCINNATI,LOC|ORG,6,0,3,3,0
+validation,MONTREAL,LOC|ORG,6,0,4,2,0
+validation,PHILADELPHIA,LOC|ORG,6,0,3,3,0
+validation,PITTSBURGH,LOC|ORG,6,0,4,2,0
+validation,SEATTLE,LOC|ORG,6,0,4,2,0
+validation,ST LOUIS,LOC|ORG,6,0,4,2,0
+validation,TORONTO,LOC|ORG,6,0,3,3,0
+validation,LOS ANGELES,LOC|ORG,5,0,4,1,0
+validation,Los Angeles,LOC|ORG,5,0,4,1,0
+validation,Milan,LOC|ORG,5,0,2,3,0
+validation,OAKLAND,LOC|ORG,5,0,3,2,0
+validation,Philadelphia,LOC|ORG,5,0,1,4,0
+validation,TEXAS,LOC|ORG,5,0,3,2,0
+validation,Birmingham,LOC|ORG,4,0,3,1,0
+validation,Bristol,LOC|ORG,4,0,2,2,0
+validation,Chesterfield,LOC|ORG,4,0,2,2,0
+validation,Kansas City,LOC|ORG,4,0,2,2,0
+validation,Portsmouth,LOC|ORG,4,0,2,2,0
+validation,BIRMINGHAM,LOC|ORG,3,0,1,2,0
+validation,Boston,LOC|ORG,3,0,2,1,0
+validation,Leicester,LOC|ORG,3,0,1,2,0
+validation,MILAN,LOC|ORG,3,0,1,2,0
+validation,Michael Collins,MISC|PER,3,1,0,0,2
+validation,Milwaukee,LOC|ORG,3,0,2,1,0
+validation,Oxford,LOC|ORG,3,0,2,1,0
+validation,Seattle,LOC|ORG,3,0,2,1,0
+validation,BSE,MISC|ORG,2,0,1,0,1
+validation,Cincinnati,LOC|ORG,2,0,1,1,0
+validation,Harlequins,LOC|ORG,2,0,1,1,0
+validation,Leeds,LOC|ORG,2,0,1,1,0
+validation,NICE,LOC|ORG,2,0,1,1,0
+validation,St Louis,LOC|ORG,2,0,1,1,0
+validation,WIGAN,LOC|ORG,2,0,1,1,0
+test,Barcelona,LOC|ORG,24,0,22,2,0
+test,NEW YORK,LOC|ORG,22,0,3,19,0
+test,Santa Fe,LOC|ORG,18,0,16,2,0
+test,CHICAGO,LOC|ORG,13,0,7,6,0
+test,WASHINGTON,LOC|ORG,12,0,8,4,0
+test,American,MISC|ORG,10,0,4,0,6
+test,Busang,LOC|ORG,9,0,4,5,0
+test,DALLAS,LOC|ORG,9,0,6,3,0
+test,DETROIT,LOC|ORG,9,0,7,2,0
+test,New York,LOC|ORG,9,0,1,8,0
+test,BOSTON,LOC|ORG,8,0,6,2,0
+test,League,LOC|ORG,8,0,6,2,0
+test,NEW JERSEY,LOC|ORG,8,0,6,2,0
+test,Wimbledon,LOC|ORG,8,0,4,4,0
+test,BUFFALO,LOC|ORG,7,0,6,1,0
+test,MIAMI,LOC|ORG,7,0,5,2,0
+test,TORONTO,LOC|ORG,7,0,6,1,0
+test,VANCOUVER,LOC|ORG,7,0,6,1,0
+test,Victoria,LOC|ORG,7,0,3,4,0
+test,Charlton,ORG|PER,6,4,2,0,0
+test,HOUSTON,LOC|ORG,6,0,3,3,0
+test,Newcastle,LOC|ORG,6,0,5,1,0
+test,PITTSBURGH,LOC|ORG,6,0,4,2,0
+test,ATLANTA,LOC|ORG,5,0,4,1,0
+test,COLORADO,LOC|ORG,5,0,3,2,0
+test,LOS ANGELES,LOC|ORG,5,0,4,1,0
+test,Milan,LOC|ORG,5,0,4,1,0
+test,Philadelphia,LOC|ORG,5,0,2,3,0
+test,SEATTLE,LOC|ORG,5,0,3,2,0
+test,TAMPA BAY,LOC|ORG,5,0,4,1,0
+test,Tasmania,LOC|ORG,5,0,3,2,0
+test,UTAH,LOC|ORG,5,0,4,1,0
+test,Cardiff,LOC|ORG,4,0,3,1,0
+test,Charleroi,LOC|ORG,4,0,3,1,0
+test,DENVER,LOC|ORG,4,0,3,1,0
+test,EDMONTON,LOC|ORG,4,0,2,2,0
+test,GOLDEN STATE,LOC|ORG,4,0,3,1,0
+test,HARTFORD,LOC|ORG,4,0,2,2,0
+test,LA LAKERS,LOC|ORG,4,0,3,1,0
+test,Leicester,LOC|ORG,4,0,3,1,0
+test,MONTREAL,LOC|ORG,4,0,3,1,0
+test,PORTLAND,LOC|ORG,4,0,3,1,0
+test,SACRAMENTO,LOC|ORG,4,0,3,1,0
+test,SAN ANTONIO,LOC|ORG,4,0,3,1,0
+test,INDIANAPOLIS,LOC|ORG,3,0,2,1,0
+test,Jones,MISC|PER,3,2,0,0,1
+test,Karlsruhe,LOC|ORG,3,0,2,1,0
+test,NY ISLANDERS,LOC|ORG,3,0,2,1,0
+test,OAKLAND,LOC|ORG,3,0,1,2,0
+test,SAN JOSE,LOC|ORG,3,0,2,1,0
+test,Toronto,LOC|ORG,3,0,1,2,0
+test,Vancouver,LOC|ORG,3,0,2,1,0
+test,ARIZONA,LOC|ORG,2,0,1,1,0
+test,CINCINNATI,LOC|ORG,2,0,1,1,0
+test,Freiburg,LOC|ORG,2,0,1,1,0
+test,Hartford,LOC|ORG,2,0,1,1,0
+test,NEW ENGLAND,LOC|ORG,2,0,1,1,0
+test,NEW ORLEANS,LOC|ORG,2,0,1,1,0
+test,Nebraska,LOC|ORG,2,0,1,1,0
+test,Ottawa,LOC|ORG,2,0,1,1,0
+test,Oxford,LOC|ORG,2,0,1,1,0
+test,Pontypridd,LOC|ORG,2,0,1,1,0
+test,Portsmouth,LOC|ORG,2,0,1,1,0
+test,SAN FRANCISCO,LOC|ORG,2,0,1,1,0

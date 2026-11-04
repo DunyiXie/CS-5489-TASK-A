@@ -1,0 +1,12 @@
+{
+  "max_length": 256,
+  "includes_special_tokens": true,
+  "scheme": "IOB2 labels retained from metadata; no relabeling at chunk boundaries.",
+  "supervision": "First subword of each original word only; continuation/special/padding labels are -100.",
+  "chunking": "Greedy nonoverlapping complete-word chunks based only on tokenized word lengths; never gold entities.",
+  "oversized_word": "Raise an error if one word exceeds the content budget or produces no subword; never silently discard it.",
+  "evaluation": "Reassemble each original sentence in word order before entity metrics; do not score chunks separately.",
+  "context_limit": "Whole-word chunking can cut through an entity and limits cross-chunk context; original gold labels are preserved.",
+  "padding": "Dynamic right-padding per batch; strip alignment metadata before passing a batch to a model.",
+  "model_work": "Tokenizer preparation only: no model weights, training, predictions or F1 scoring."
+}

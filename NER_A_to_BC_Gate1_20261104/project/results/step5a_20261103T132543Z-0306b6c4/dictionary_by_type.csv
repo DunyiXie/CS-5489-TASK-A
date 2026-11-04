@@ -1,0 +1,5 @@
+type,retained_surfaces,retained_mentions,excluded_ambiguous_mentions
+PER,3595,6559,41
+ORG,2282,5536,785
+LOC,1214,6424,716
+MISC,859,3348,90

@@ -1,0 +1,11 @@
+{
+  "schema": "ner-word-predictions-v1",
+  "metric_contract": "ner-entity-metrics-v1",
+  "system": "memory_8bcaedf7c4f6ada7d1b3",
+  "split": "test",
+  "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+  "sha256": "0ea9a19adee61782ad80645a35da91f6cee076aa129aec23d68950b5158a4abe",
+  "prediction_iob2_repairs": 0,
+  "sentences": 3453,
+  "words": 46435
+}

@@ -1,0 +1,79 @@
+{
+  "accepted": true,
+  "acceptance_date": "2026-11-04",
+  "archive": "NER_step5a_20261103T132603Z_08051191.zip",
+  "size_bytes": 959349,
+  "sha256": "17aa7798a8f9b01791fc3840312b6e2fa25264825e1105f63b1c33d94568c2cf",
+  "project_files": 35,
+  "artifacts": 18,
+  "tables": 5,
+  "run_id": "20261103T132543Z-0306b6c4",
+  "notebook_revision": "2026-11-03-memory-v1",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "protocol_sha256": "f70ce61993c32c158900623a495c61efd0a70c95fadbdc2cfb572cf9d01cec01",
+  "model_contract_sha256": "8bcaedf7c4f6ada7d1b3250e2e145ca823e2290be22504027eb5c3de7db79acb",
+  "model_sha256": "e928a4ba225849cf78babe2e6041c910dc8b69103f865ae36165a71810b9a41c",
+  "dictionary_summary": {
+    "train_sentences": 14041,
+    "train_words": 203621,
+    "train_entity_mentions": 23499,
+    "distinct_entity_surfaces": 8082,
+    "retained_surfaces": 7950,
+    "ambiguous_surfaces": 132,
+    "retained_mentions": 21867,
+    "excluded_ambiguous_mentions": 1632,
+    "max_retained_length": 10
+  },
+  "results": {
+    "validation": {
+      "overall": {
+        "tp": 3609,
+        "fp": 939,
+        "fn": 2333,
+        "support": 5942,
+        "predicted": 4548,
+        "precision": 0.7935356200527705,
+        "recall": 0.6073712554695389,
+        "f1": 0.6880838894184939
+      },
+      "f1_ci": {
+        "estimate": 0.6880838894184939,
+        "low": 0.673341188590278,
+        "high": 0.7028712655674064
+      },
+      "prediction_rows": {
+        "sentences": 3250,
+        "words": 51362
+      }
+    },
+    "test": {
+      "overall": {
+        "tp": 2641,
+        "fp": 1022,
+        "fn": 3007,
+        "support": 5648,
+        "predicted": 3663,
+        "precision": 0.7209937209937209,
+        "recall": 0.46759915014164305,
+        "f1": 0.5672860057995919
+      },
+      "f1_ci": {
+        "estimate": 0.5672860057995919,
+        "low": 0.5520276679749433,
+        "high": 0.5823211359056802
+      },
+      "prediction_rows": {
+        "sentences": 3453,
+        "words": 46435
+      }
+    }
+  },
+  "checks_passed": 346,
+  "gate1": "Pipeline/interface gate passed; Step 5b may proceed when requested.",
+  "historical_reproduction": "Measured test F1 56.7286 vs published 59.61: -2.8814 percentage points. Not an exact reproduction; reason not established by this ZIP. Do not attribute solely to IOB2 conversion or tune using test scores.",
+  "scope": "Reviewed exported files and recomputed metrics/bootstrap from fixed saved predictions. No fitting, alternative decoding, new inference, raw-data downloads or Colab execution.",
+  "limitations": [
+    "Raw training data are excluded; the training sequence fingerprint and full dictionary fit cannot be independently rebuilt here. Saved dictionary counts, all ambiguous entries, per-type and length distributions match independently accepted Step 2.",
+    "Prediction JSONL omits POS/chunk fields used in the accepted full-data ordered hash; full raw-row identity cannot be recomputed from JSONL alone. IDs/lengths/gold counts and distributions pass; archived provenance hashes agree."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "train_sentences": 14041,
+  "train_words": 203621,
+  "train_entity_mentions": 23499,
+  "distinct_entity_surfaces": 8082,
+  "retained_surfaces": 7950,
+  "ambiguous_surfaces": 132,
+  "retained_mentions": 21867,
+  "excluded_ambiguous_mentions": 1632,
+  "max_retained_length": 10
+}

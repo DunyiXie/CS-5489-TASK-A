@@ -1,0 +1,34 @@
+{
+  "requested_source": "eriktks/conll2003",
+  "actual_source": "tomaarsen/conll2003",
+  "revision": "3a0c0677d3177b6122fceed3239dda7a5de6a514",
+  "format": "parquet",
+  "source_url": "https://huggingface.co/datasets/tomaarsen/conll2003/tree/3a0c0677d3177b6122fceed3239dda7a5de6a514",
+  "reason": "Development document permits Parquet fallback; datasets 4.0 removes loading scripts.",
+  "license_as_stated_by_card": "other",
+  "source_files": [
+    {
+      "path": "data/train-00000-of-00001.parquet",
+      "size_bytes": 1241085,
+      "sha256": "28924b53e43ec4d741cbef16d8a6245a77f404a77f18d44e256f95fa29acb59b"
+    },
+    {
+      "path": "data/validation-00000-of-00001.parquet",
+      "size_bytes": 315597,
+      "sha256": "0aa0bd59cf9ac8f60252d8194a8a223b650daba50f8e5a79284abf85420bfe84"
+    },
+    {
+      "path": "data/test-00000-of-00001.parquet",
+      "size_bytes": 287552,
+      "sha256": "9242163e112f99b43c32b663c6d6f7d5df64de73e19e02fcac789935f72565b8"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 14967,
+      "sha256": "a6812e0cca383af9f4c316f8abe43169ddda7230c2686ba314629e59a41a66b9"
+    }
+  ],
+  "preprocessing": "None: no shuffle, split, filtering, label conversion or token normalization.",
+  "parity_scope": "Split sizes, metadata, all-row structure/IOB2 and ordered content hashes checked. Byte-for-byte equivalence to eriktks/conll2003 has not been established.",
+  "recorded_at_utc": "2026-11-01T07:12:08.589360+00:00"
+}
